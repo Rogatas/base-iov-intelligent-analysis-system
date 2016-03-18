@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Interface</module>
+        <module>HadoopTask</module>
+        <module>HiveTask</module>
+        <module>Core</module>
     </modules>
 
 </project>
