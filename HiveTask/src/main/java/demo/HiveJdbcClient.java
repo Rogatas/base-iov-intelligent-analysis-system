@@ -21,8 +21,8 @@ public class HiveJdbcClient {
 
     //Hive server 2
     private static String driverName = "org.apache.hive.jdbc.HiveDriver";
-    private static String url = "jdbc:hive2://192.168.101.10:10000/default";
-    private static String user = "";
+    private static String url = "jdbc:hive2://192.168.101.71:10001/default";
+    private static String user = "root";
     private static String password = "";
     private static String sql = "";
     private static ResultSet res;
@@ -62,12 +62,12 @@ public class HiveJdbcClient {
 
             /** 第一步:存在就先删除 **/
             sql = "drop table " + tableName;
-            stmt.executeQuery(sql);
+            stmt.execute(sql);
 
             /** 第二步:不存在就创建 **/
             sql = "create table " + tableName + " (key int, value string)  row format delimited fields terminated by '\t'";
 
-            stmt.executeQuery(sql);
+            stmt.execute(sql);
 
             //执行show tables操作
             sql = "show tables '" + tableName + "'";
@@ -75,6 +75,7 @@ public class HiveJdbcClient {
             System.out.println("Running:" + sql);
 
             res = stmt.executeQuery(sql);
+
             System.out.println("执行show tables操作运行结果:");
 
             if (res.next()) {
@@ -98,11 +99,13 @@ public class HiveJdbcClient {
             sql = "load data local inpath '" + filepath + "' into table " + tableName;
             System.out.println("Running:" + sql);
 
-            res = stmt.executeQuery(sql);
+            stmt.execute(sql);
 
             // 执行“select * query”操作
             sql = "select * from " + tableName;
+
             System.out.println("Running:" + sql);
+
             res = stmt.executeQuery(sql);
 
             System.out.println("执行“select * query”运行结果:");
@@ -115,8 +118,11 @@ public class HiveJdbcClient {
             sql = "select count(1) from " + tableName;
 
             System.out.println("Running:" + sql);
+
             res = stmt.executeQuery(sql);
+
             System.out.println("执行“regular hive query”运行结果:");
+
             while (res.next()) {
                 System.out.println(res.getString(1));
 

@@ -202,3 +202,871 @@ Caused by: java.net.ConnectException: Connection timed out: connect
 [INFO] [2016-03-19 23:42:51][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.10:10000
 [INFO] [2016-03-19 23:42:51][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.10:10000
 [INFO] [2016-03-19 23:42:52][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.10:10000/default
+[INFO] [2016-03-20 01:52:22][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 01:52:23][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 01:52:23][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 01:52:24][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 01:52:25][org.apache.hive.jdbc.HiveConnection]Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 01:52:25][org.apache.hive.jdbc.HiveConnection]Transport Used for JDBC connection: null
+[ERROR] [2016-03-20 01:52:25][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default: java.net.ConnectException: Connection refused: connect
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:231)
+	at org.apache.hive.jdbc.HiveConnection.<init>(HiveConnection.java:176)
+	at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:105)
+	at java.sql.DriverManager.getConnection(DriverManager.java:579)
+	at java.sql.DriverManager.getConnection(DriverManager.java:221)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused: connect
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:187)
+	at org.apache.thrift.transport.TSaslTransport.open(TSaslTransport.java:266)
+	at org.apache.thrift.transport.TSaslClientTransport.open(TSaslClientTransport.java:37)
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:204)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:182)
+	... 13 more
+[INFO] [2016-03-20 01:58:28][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 01:58:29][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 01:58:29][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 01:58:31][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 01:58:34][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 01:59:29][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 01:59:29][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 01:59:29][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 01:59:30][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 01:59:32][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 02:05:38][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 02:05:38][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 02:05:38][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 02:05:39][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 02:05:40][org.apache.hive.jdbc.HiveConnection]Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 02:05:40][org.apache.hive.jdbc.HiveConnection]Transport Used for JDBC connection: null
+[ERROR] [2016-03-20 02:05:40][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default: java.net.ConnectException: Connection refused: connect
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:231)
+	at org.apache.hive.jdbc.HiveConnection.<init>(HiveConnection.java:176)
+	at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:105)
+	at java.sql.DriverManager.getConnection(DriverManager.java:579)
+	at java.sql.DriverManager.getConnection(DriverManager.java:221)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused: connect
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:187)
+	at org.apache.thrift.transport.TSaslTransport.open(TSaslTransport.java:266)
+	at org.apache.thrift.transport.TSaslClientTransport.open(TSaslClientTransport.java:37)
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:204)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:182)
+	... 13 more
+[INFO] [2016-03-20 02:06:21][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 02:06:21][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 02:06:21][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 02:06:21][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 02:06:23][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: Error while processing statement: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. AlreadyExistsException(message:Table testHiveDriverTable already exists)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:296)
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:392)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 02:13:56][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 02:13:56][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 02:13:56][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 02:13:57][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 02:13:58][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 02:19:39][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 02:19:40][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 02:19:40][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 02:19:42][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 02:19:43][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 02:27:06][demo.HiveJdbcClient]start
+[ERROR] [2016-03-20 02:27:06][demo.HiveJdbcClient]org.apache.hive.jdbc.HiveDriver2 not found!
+java.lang.ClassNotFoundException: org.apache.hive.jdbc.HiveDriver2
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:188)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 02:28:12][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 02:28:12][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 02:28:12][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 02:28:12][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[ERROR] [2016-03-20 02:28:14][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 12:13:22][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:13:23][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10000
+[INFO] [2016-03-20 12:13:23][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10000
+[INFO] [2016-03-20 12:13:23][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 12:13:44][org.apache.hive.jdbc.HiveConnection]Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default
+[INFO] [2016-03-20 12:13:44][org.apache.hive.jdbc.HiveConnection]Transport Used for JDBC connection: null
+[ERROR] [2016-03-20 12:13:45][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: Could not open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10000/default: java.net.ConnectException: Connection timed out: connect
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:231)
+	at org.apache.hive.jdbc.HiveConnection.<init>(HiveConnection.java:176)
+	at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:105)
+	at java.sql.DriverManager.getConnection(DriverManager.java:579)
+	at java.sql.DriverManager.getConnection(DriverManager.java:221)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection timed out: connect
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:187)
+	at org.apache.thrift.transport.TSaslTransport.open(TSaslTransport.java:266)
+	at org.apache.thrift.transport.TSaslClientTransport.open(TSaslClientTransport.java:37)
+	at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:204)
+	... 10 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.thrift.transport.TSocket.open(TSocket.java:182)
+	... 13 more
+[INFO] [2016-03-20 12:23:51][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:23:51][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:23:51][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:23:51][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[ERROR] [2016-03-20 12:23:53][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 12:24:40][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:24:40][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:24:40][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:24:40][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[ERROR] [2016-03-20 12:24:42][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+[INFO] [2016-03-20 12:27:57][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:27:58][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:27:58][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:27:58][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[ERROR] [2016-03-20 12:28:01][demo.HiveJdbcClient]Connection error!
+org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException Line 1:23 Invalid path ''/liguodong/data/test.txt'': No files matching path file:/liguodong/data/test.txt
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:256)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:242)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:254)
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:392)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException Line 1:23 Invalid path ''/liguodong/data/test.txt'': No files matching path file:/liguodong/data/test.txt
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:315)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:112)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:181)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:257)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:388)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:375)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hive.service.cli.session.HiveSessionProxy.invoke(HiveSessionProxy.java:78)
+	at org.apache.hive.service.cli.session.HiveSessionProxy.access$000(HiveSessionProxy.java:36)
+	at org.apache.hive.service.cli.session.HiveSessionProxy$1.run(HiveSessionProxy.java:63)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1628)
+	at org.apache.hive.service.cli.session.HiveSessionProxy.invoke(HiveSessionProxy.java:59)
+	at com.sun.proxy.$Proxy25.executeStatementAsync(Unknown Source)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:274)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:486)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:285)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.hadoop.hive.ql.parse.SemanticException: Line 1:23 Invalid path ''/liguodong/data/test.txt'': No files matching path file:/liguodong/data/test.txt
+	at org.apache.hadoop.hive.ql.parse.LoadSemanticAnalyzer.applyConstraints(LoadSemanticAnalyzer.java:139)
+	at org.apache.hadoop.hive.ql.parse.LoadSemanticAnalyzer.analyzeInternal(LoadSemanticAnalyzer.java:230)
+	at org.apache.hadoop.hive.ql.parse.BaseSemanticAnalyzer.analyze(BaseSemanticAnalyzer.java:227)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:424)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:308)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1122)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1116)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:110)
+	... 27 more
+[INFO] [2016-03-20 12:30:27][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:30:27][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:30:27][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:30:28][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[ERROR] [2016-03-20 12:30:31][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: The query did not generate a result set!
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:393)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:101)
+[INFO] [2016-03-20 12:39:08][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:39:09][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:39:09][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:39:09][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[INFO] [2016-03-20 12:40:21][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:40:21][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:40:21][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:40:21][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[ERROR] [2016-03-20 12:40:25][demo.HiveJdbcClient]Connection error!
+java.sql.SQLException: Error while processing statement: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:296)
+	at org.apache.hive.jdbc.HiveStatement.executeQuery(HiveStatement.java:392)
+	at demo.HiveJdbcClient.main(HiveJdbcClient.java:122)
+[INFO] [2016-03-20 12:41:12][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 12:41:12][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 12:41:12][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 12:41:12][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[INFO] [2016-03-20 18:32:04][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 18:32:04][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 18:32:06][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 18:32:06][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 18:32:06][org.apache.hadoop.mapreduce.JobSubmitter]Cleaning up the staging area file:/tmp/hadoop-liguodong/mapred/staging/liguodong590036067/.staging/job_local590036067_0001
+[WARN] [2016-03-20 18:32:06][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong590036067\.staging\job_local590036067_0001\.job.split.crc]: it still exists.
+[WARN] [2016-03-20 18:32:06][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong590036067\.staging\job_local590036067_0001\job.split]: it still exists.
+[INFO] [2016-03-20 18:37:31][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 18:37:31][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 18:37:32][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 18:37:33][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 18:37:33][org.apache.hadoop.mapreduce.JobSubmitter]Cleaning up the staging area file:/tmp/hadoop-liguodong/mapred/staging/liguodong1994169981/.staging/job_local1994169981_0001
+[WARN] [2016-03-20 18:37:33][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong1994169981\.staging\job_local1994169981_0001\.job.split.crc]: it still exists.
+[WARN] [2016-03-20 18:37:33][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong1994169981\.staging\job_local1994169981_0001\job.split]: it still exists.
+[INFO] [2016-03-20 18:51:40][demo.HiveJdbcClient]start
+[INFO] [2016-03-20 18:51:41][org.apache.hive.jdbc.Utils]Supplied authorities: 192.168.101.71:10001
+[INFO] [2016-03-20 18:51:41][org.apache.hive.jdbc.Utils]Resolved authority: 192.168.101.71:10001
+[INFO] [2016-03-20 18:51:42][org.apache.hive.jdbc.HiveConnection]Will try to open client transport with JDBC Uri: jdbc:hive2://192.168.101.71:10001/default
+[INFO] [2016-03-20 18:52:49][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 18:52:49][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 18:52:50][org.apache.hadoop.mapreduce.JobSubmitter]Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+[WARN] [2016-03-20 18:52:50][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 18:52:50][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 18:52:50][org.apache.hadoop.mapreduce.JobSubmitter]Cleaning up the staging area file:/tmp/hadoop-liguodong/mapred/staging/liguodong36105078/.staging/job_local36105078_0001
+[WARN] [2016-03-20 18:52:50][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong36105078\.staging\job_local36105078_0001\.job.split.crc]: it still exists.
+[WARN] [2016-03-20 18:52:50][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong36105078\.staging\job_local36105078_0001\job.split]: it still exists.
+[INFO] [2016-03-20 19:25:25][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 19:25:25][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 19:25:28][org.apache.hadoop.mapreduce.JobSubmitter]Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+[WARN] [2016-03-20 19:25:28][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 19:25:29][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 19:25:30][org.apache.hadoop.mapreduce.JobSubmitter]Cleaning up the staging area file:/tmp/hadoop-liguodong/mapred/staging/liguodong1112622539/.staging/job_local1112622539_0001
+[WARN] [2016-03-20 19:25:30][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong1112622539\.staging\job_local1112622539_0001\.job.split.crc]: it still exists.
+[WARN] [2016-03-20 19:25:30][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong1112622539\.staging\job_local1112622539_0001\job.split]: it still exists.
+[INFO] [2016-03-20 19:26:01][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 19:26:01][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 19:26:02][org.apache.hadoop.mapreduce.JobSubmitter]Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+[WARN] [2016-03-20 19:26:02][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 19:26:02][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 19:26:02][org.apache.hadoop.mapreduce.JobSubmitter]Cleaning up the staging area file:/tmp/hadoop-liguodong/mapred/staging/liguodong2067417558/.staging/job_local2067417558_0001
+[WARN] [2016-03-20 19:26:02][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong2067417558\.staging\job_local2067417558_0001\.job.split.crc]: it still exists.
+[WARN] [2016-03-20 19:26:02][org.apache.hadoop.fs.FileUtil]Failed to delete file or dir [G:\tmp\hadoop-liguodong\mapred\staging\liguodong2067417558\.staging\job_local2067417558_0001\job.split]: it still exists.
+[INFO] [2016-03-20 20:47:44][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 20:47:44][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 20:47:46][org.apache.hadoop.mapreduce.JobSubmitter]Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+[WARN] [2016-03-20 20:47:46][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 20:47:47][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 20:47:47][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 20:47:47][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local1093706781_0001
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapreduce.Job]Running job: job_local1093706781_0001
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local1093706781_0001_m_000000_0
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@18f5e80
+[INFO] [2016-03-20 20:47:48][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapreduce.Job]Job job_local1093706781_0001 running in uber mode : false
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]Spilling map output
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufend = 74; bufvoid = 104857600
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]kvstart = 26214396(104857584); kvend = 26214368(104857472); length = 29/6553600
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.MapTask]Finished spill 0
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.Task]Task:attempt_local1093706781_0001_m_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]map
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.Task]Task 'attempt_local1093706781_0001_m_000000_0' done.
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local1093706781_0001_m_000000_0
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]Waiting for reduce tasks
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local1093706781_0001_r_000000_0
+[INFO] [2016-03-20 20:47:49][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@1bc7abc
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.ReduceTask]Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@30cb9
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]MergerManager: memoryLimit=181665792, maxSingleShuffleLimit=45416448, mergeThreshold=119899424, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]attempt_local1093706781_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.LocalFetcher]localfetcher#1 about to shuffle output of map attempt_local1093706781_0001_m_000000_0 decomp: 92 len: 96 to MEMORY
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput]Read 92 bytes from map-output for attempt_local1093706781_0001_m_000000_0
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]closeInMemoryFile -> map-output of size: 92, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->92
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]EventFetcher is interrupted.. Returning
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merged 1 segments, 92 bytes to disk to satisfy reduce memory limit
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 1 files, 96 bytes from disk
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 0 segments, 0 bytes from memory into reduce
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.Job] map 100% reduce 0%
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.conf.Configuration.deprecation]mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Task]Task:attempt_local1093706781_0001_r_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Task]Task attempt_local1093706781_0001_r_000000_0 is allowed to commit now
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter]Saved output of task 'attempt_local1093706781_0001_r_000000_0' to hdfs://192.168.101.71:8020/output/_temporary/0/task_local1093706781_0001_r_000000
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]reduce > reduce
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.Task]Task 'attempt_local1093706781_0001_r_000000_0' done.
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local1093706781_0001_r_000000_0
+[INFO] [2016-03-20 20:47:50][org.apache.hadoop.mapred.LocalJobRunner]reduce task executor complete.
+[INFO] [2016-03-20 20:47:51][org.apache.hadoop.mapreduce.Job] map 100% reduce 100%
+[INFO] [2016-03-20 20:47:51][org.apache.hadoop.mapreduce.Job]Job job_local1093706781_0001 completed successfully
+[INFO] [2016-03-20 20:47:51][org.apache.hadoop.mapreduce.Job]Counters: 38
+	File System Counters
+		FILE: Number of bytes read=538
+		FILE: Number of bytes written=515490
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=84
+		HDFS: Number of bytes written=58
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=8
+		Map output bytes=74
+		Map output materialized bytes=96
+		Input split bytes=106
+		Combine input records=8
+		Combine output records=8
+		Reduce input groups=8
+		Reduce shuffle bytes=96
+		Reduce input records=8
+		Reduce output records=8
+		Spilled Records=16
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=67
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=242360320
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=42
+	File Output Format Counters 
+		Bytes Written=58
+[INFO] [2016-03-20 23:03:42][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:03:42][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[INFO] [2016-03-20 23:07:41][org.apache.hadoop.ipc.Client]Retrying connect to server: 192.168.101.71/192.168.101.71:8020. Already tried 0 time(s); maxRetries=45
+[INFO] [2016-03-20 23:07:42][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:07:42][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[INFO] [2016-03-20 23:12:17][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:12:17][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:12:17][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:12:18][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:12:18][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:12:18][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local2085704979_0001
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapreduce.Job]Running job: job_local2085704979_0001
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local2085704979_0001_m_000000_0
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@1f4e1c7
+[INFO] [2016-03-20 23:12:19][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapreduce.Job]Job job_local2085704979_0001 running in uber mode : false
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:12:20][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[WARN] [2016-03-20 23:12:20][org.apache.hadoop.mapred.LocalJobRunner]job_local2085704979_0001
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.lang.NullPointerException
+	at demos.WordCount2$TokenizerMapper.setup(WordCount2.java:58)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:784)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[INFO] [2016-03-20 23:12:21][org.apache.hadoop.mapreduce.Job]Job job_local2085704979_0001 failed with state FAILED due to: NA
+[INFO] [2016-03-20 23:12:21][org.apache.hadoop.mapreduce.Job]Counters: 0
+[INFO] [2016-03-20 23:13:32][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:13:32][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:13:32][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local943745416_0001
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapreduce.Job]Running job: job_local943745416_0001
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local943745416_0001_m_000000_0
+[INFO] [2016-03-20 23:13:33][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@122112
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[WARN] [2016-03-20 23:13:34][org.apache.hadoop.mapred.LocalJobRunner]job_local943745416_0001
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.lang.NullPointerException
+	at demos.WordCount2$TokenizerMapper.setup(WordCount2.java:58)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:784)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapreduce.Job]Job job_local943745416_0001 running in uber mode : false
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapreduce.Job]Job job_local943745416_0001 failed with state FAILED due to: NA
+[INFO] [2016-03-20 23:13:34][org.apache.hadoop.mapreduce.Job]Counters: 0
+[INFO] [2016-03-20 23:14:07][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:14:07][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.JobSubmitter]Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+[WARN] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local510049775_0001
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapreduce.Job]Running job: job_local510049775_0001
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:14:08][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local510049775_0001_m_000000_0
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@1e0e53
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapreduce.Job]Job job_local510049775_0001 running in uber mode : false
+[INFO] [2016-03-20 23:14:09][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.MapTask]Spilling map output
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufend = 74; bufvoid = 104857600
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.MapTask]kvstart = 26214396(104857584); kvend = 26214368(104857472); length = 29/6553600
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.MapTask]Finished spill 0
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Task]Task:attempt_local510049775_0001_m_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]map
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Task]Task 'attempt_local510049775_0001_m_000000_0' done.
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local510049775_0001_m_000000_0
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]Waiting for reduce tasks
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local510049775_0001_r_000000_0
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@1ebb27c
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.ReduceTask]Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@11bc5d7
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]MergerManager: memoryLimit=181665792, maxSingleShuffleLimit=45416448, mergeThreshold=119899424, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]attempt_local510049775_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.LocalFetcher]localfetcher#1 about to shuffle output of map attempt_local510049775_0001_m_000000_0 decomp: 92 len: 96 to MEMORY
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput]Read 92 bytes from map-output for attempt_local510049775_0001_m_000000_0
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]closeInMemoryFile -> map-output of size: 92, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->92
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]EventFetcher is interrupted.. Returning
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merged 1 segments, 92 bytes to disk to satisfy reduce memory limit
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 1 files, 96 bytes from disk
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 0 segments, 0 bytes from memory into reduce
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.mapreduce.Job] map 100% reduce 0%
+[INFO] [2016-03-20 23:14:10][org.apache.hadoop.conf.Configuration.deprecation]mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.Task]Task:attempt_local510049775_0001_r_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.Task]Task attempt_local510049775_0001_r_000000_0 is allowed to commit now
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter]Saved output of task 'attempt_local510049775_0001_r_000000_0' to hdfs://192.168.101.71:8020/output/_temporary/0/task_local510049775_0001_r_000000
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.LocalJobRunner]reduce > reduce
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.Task]Task 'attempt_local510049775_0001_r_000000_0' done.
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local510049775_0001_r_000000_0
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapred.LocalJobRunner]reduce task executor complete.
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapreduce.Job] map 100% reduce 100%
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapreduce.Job]Job job_local510049775_0001 completed successfully
+[INFO] [2016-03-20 23:14:11][org.apache.hadoop.mapreduce.Job]Counters: 38
+	File System Counters
+		FILE: Number of bytes read=538
+		FILE: Number of bytes written=512790
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=84
+		HDFS: Number of bytes written=58
+		HDFS: Number of read operations=17
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=6
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=8
+		Map output bytes=74
+		Map output materialized bytes=96
+		Input split bytes=106
+		Combine input records=8
+		Combine output records=8
+		Reduce input groups=8
+		Reduce shuffle bytes=96
+		Reduce input records=8
+		Reduce output records=8
+		Spilled Records=16
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=87
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=242360320
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=42
+	File Output Format Counters 
+		Bytes Written=58
+[INFO] [2016-03-20 23:18:38][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:18:38][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:18:38][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:18:38][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:18:38][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:18:38][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local1955423573_0001
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapreduce.Job]Running job: job_local1955423573_0001
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local1955423573_0001_m_000000_0
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@a8217b
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:18:39][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:18:40][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[WARN] [2016-03-20 23:18:40][org.apache.hadoop.mapred.LocalJobRunner]job_local1955423573_0001
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.lang.NullPointerException
+	at demos.WordCount2$TokenizerMapper.setup(WordCount2.java:58)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:784)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[INFO] [2016-03-20 23:18:40][org.apache.hadoop.mapreduce.Job]Job job_local1955423573_0001 running in uber mode : false
+[INFO] [2016-03-20 23:18:40][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:18:40][org.apache.hadoop.mapreduce.Job]Job job_local1955423573_0001 failed with state FAILED due to: NA
+[INFO] [2016-03-20 23:18:40][org.apache.hadoop.mapreduce.Job]Counters: 0
+[INFO] [2016-03-20 23:27:29][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:27:29][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:27:33][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:27:33][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:27:34][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:27:35][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local467839799_0001
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapreduce.Job]Running job: job_local467839799_0001
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local467839799_0001_m_000000_0
+[INFO] [2016-03-20 23:27:39][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@ad3193
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[WARN] [2016-03-20 23:27:40][org.apache.hadoop.mapred.LocalJobRunner]job_local467839799_0001
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:462)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:522)
+Caused by: java.lang.NullPointerException
+	at demos.WordCount2$TokenizerMapper.setup(WordCount2.java:59)
+	at org.apache.hadoop.mapreduce.Mapper.run(Mapper.java:142)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:784)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:341)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:243)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapreduce.Job]Job job_local467839799_0001 running in uber mode : false
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapreduce.Job]Job job_local467839799_0001 failed with state FAILED due to: NA
+[INFO] [2016-03-20 23:27:40][org.apache.hadoop.mapreduce.Job]Counters: 0
+[INFO] [2016-03-20 23:30:05][org.apache.hadoop.conf.Configuration.deprecation]session.id is deprecated. Instead, use dfs.metrics.session-id
+[INFO] [2016-03-20 23:30:05][org.apache.hadoop.metrics.jvm.JvmMetrics]Initializing JVM Metrics with processName=JobTracker, sessionId=
+[WARN] [2016-03-20 23:30:06][org.apache.hadoop.mapreduce.JobSubmitter]No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+[INFO] [2016-03-20 23:30:06][org.apache.hadoop.mapreduce.lib.input.FileInputFormat]Total input paths to process : 1
+[INFO] [2016-03-20 23:30:06][org.apache.hadoop.mapreduce.JobSubmitter]number of splits:1
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapreduce.JobSubmitter]Submitting tokens for job: job_local1256037001_0001
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapreduce.Job]The url to track the job: http://localhost:8080/
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapreduce.Job]Running job: job_local1256037001_0001
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter set in config null
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapred.LocalJobRunner]OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapred.LocalJobRunner]Waiting for map tasks
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local1256037001_0001_m_000000_0
+[INFO] [2016-03-20 23:30:07][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@19afee3
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]Processing split: hdfs://192.168.101.71:8020/input/test.txt:0+42
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask](EQUATOR) 0 kvi 26214396(104857584)
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]mapreduce.task.io.sort.mb: 100
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]soft limit at 83886080
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufvoid = 104857600
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]kvstart = 26214396; length = 6553600
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapreduce.Job]Job job_local1256037001_0001 running in uber mode : false
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapreduce.Job] map 0% reduce 0%
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.LocalJobRunner]
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]Starting flush of map output
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]Spilling map output
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]bufstart = 0; bufend = 74; bufvoid = 104857600
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]kvstart = 26214396(104857584); kvend = 26214368(104857472); length = 29/6553600
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.MapTask]Finished spill 0
+[INFO] [2016-03-20 23:30:08][org.apache.hadoop.mapred.Task]Task:attempt_local1256037001_0001_m_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]map
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Task]Task 'attempt_local1256037001_0001_m_000000_0' done.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local1256037001_0001_m_000000_0
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]map task executor complete.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]Waiting for reduce tasks
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]Starting task: attempt_local1256037001_0001_r_000000_0
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.yarn.util.ProcfsBasedProcessTree]ProcfsBasedProcessTree currently is supported only on Linux.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Task] Using ResourceCalculatorProcessTree : org.apache.hadoop.yarn.util.WindowsBasedProcessTree@88dbf4
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.ReduceTask]Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@7300ce
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]MergerManager: memoryLimit=181665792, maxSingleShuffleLimit=45416448, mergeThreshold=119899424, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]attempt_local1256037001_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.LocalFetcher]localfetcher#1 about to shuffle output of map attempt_local1256037001_0001_m_000000_0 decomp: 92 len: 96 to MEMORY
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput]Read 92 bytes from map-output for attempt_local1256037001_0001_m_000000_0
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]closeInMemoryFile -> map-output of size: 92, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->92
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.EventFetcher]EventFetcher is interrupted.. Returning
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merged 1 segments, 92 bytes to disk to satisfy reduce memory limit
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 1 files, 96 bytes from disk
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl]Merging 0 segments, 0 bytes from memory into reduce
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Merger]Merging 1 sorted segments
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Merger]Down to the last merge-pass, with 1 segments left of total size: 88 bytes
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.conf.Configuration.deprecation]mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.Job] map 100% reduce 0%
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Task]Task:attempt_local1256037001_0001_r_000000_0 is done. And is in the process of committing
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]1 / 1 copied.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Task]Task attempt_local1256037001_0001_r_000000_0 is allowed to commit now
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter]Saved output of task 'attempt_local1256037001_0001_r_000000_0' to hdfs://192.168.101.71:8020/output/_temporary/0/task_local1256037001_0001_r_000000
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]reduce > reduce
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.Task]Task 'attempt_local1256037001_0001_r_000000_0' done.
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]Finishing task: attempt_local1256037001_0001_r_000000_0
+[INFO] [2016-03-20 23:30:09][org.apache.hadoop.mapred.LocalJobRunner]reduce task executor complete.
+[INFO] [2016-03-20 23:30:10][org.apache.hadoop.mapreduce.Job] map 100% reduce 100%
+[INFO] [2016-03-20 23:30:10][org.apache.hadoop.mapreduce.Job]Job job_local1256037001_0001 completed successfully
+[INFO] [2016-03-20 23:30:10][org.apache.hadoop.mapreduce.Job]Counters: 39
+	File System Counters
+		FILE: Number of bytes read=538
+		FILE: Number of bytes written=515254
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=84
+		HDFS: Number of bytes written=58
+		HDFS: Number of read operations=17
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=6
+	Map-Reduce Framework
+		Map input records=4
+		Map output records=8
+		Map output bytes=74
+		Map output materialized bytes=96
+		Input split bytes=106
+		Combine input records=8
+		Combine output records=8
+		Reduce input groups=8
+		Reduce shuffle bytes=96
+		Reduce input records=8
+		Reduce output records=8
+		Spilled Records=16
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=74
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=242360320
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	demos.WordCount2$TokenizerMapper$CountersEnum
+		INPUT_WORDS=8
+	File Input Format Counters 
+		Bytes Read=42
+	File Output Format Counters 
+		Bytes Written=58

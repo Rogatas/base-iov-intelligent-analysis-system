@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -21,8 +22,16 @@ import java.util.StringTokenizer;
 public class WordCount {
 
 
-    public static String INPUT = "hdfs://liguodong:8020/input/names";
-    public static String OUTPUT = "hdfs://liguodong:8020/output";
+    public static String INPUT = "hdfs://192.168.101.71:8020/input/";
+    public static String OUTPUT = "hdfs://192.168.101.71:8020/output";
+
+    static {
+        
+        //相对路径
+        PropertyConfigurator.configure("HadoopTask\\src\\main\\resource\\properties\\log4j.properties");
+
+    }
+
 
     public static class TokenizerMapper
             extends Mapper<Object, Text, Text, IntWritable> {
@@ -88,6 +97,7 @@ public class WordCount {
 
     private static void deleteDir(Configuration conf, String dirPath) throws IOException {
         FileSystem fs = FileSystem.get(conf);
+
         Path targetPath = new Path(dirPath);
         if (fs.exists(targetPath)) {
             boolean delResult = fs.delete(targetPath, true);
