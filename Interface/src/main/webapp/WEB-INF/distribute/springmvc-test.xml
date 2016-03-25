@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+       ">
+
+       <!--配置handlerMapping-->
+       <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+       </bean>
+
+       <!--配置handlerAdapter-->
+       <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
+       </bean>
+
+
+       <!--配置渲染器-->
+       <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+              <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+              <!--结果视图的前缀-->
+              <property name="prefix" value="/WEB-INF/page/jsp/" />
+              <!--结果视图的后缀-->
+              <property name="suffix" value=".jsp" />
+       </bean>
+
+
+       <!--配置请求和处理器
+              可以去除掉(.do)的后缀名，但是必须配置handlerAdapter，
+              不过加上(.do)，则配置与否都能访问到。
+       -->
+       <bean name="/hello.do" class="report.lgd.controller.HelloController">
+       </bean>
+
+
+
+
+
+
+
+</beans>

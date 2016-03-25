@@ -1,0 +1,13 @@
+/**
+ * Created by liguodong on 2016/3/24.
+ */
+
+$(document).ready(function(){
+    /*var path='${pageContext.request.contextPath }';*/
+
+    $("#loginReset").click(function(){
+        $("#username").val("");
+        $("#password").val("");
+
+    });
+});
