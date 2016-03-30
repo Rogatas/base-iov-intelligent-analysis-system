@@ -5,9 +5,18 @@
 $(document).ready(function(){
     /*var path='${pageContext.request.contextPath }';*/
 
+
     $("#loginReset").click(function(){
         $("#username").val("");
         $("#password").val("");
 
     });
+
+    $("#loginSubmit").click(function() {
+        $("#loginform").submit();
+    });
+
+
+
 });
+

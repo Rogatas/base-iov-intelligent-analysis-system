@@ -76,7 +76,7 @@
         -->
         <javaClientGenerator targetPackage="com.lgd.model.mapper"
                              targetProject="G:\githubSource\ReportSystem\Core\src\main\java"
-                             type="XMLMAPPER">
+                             type="MIXEDMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -88,9 +88,13 @@
         <!--<table tableName="students" schema="mytatis">
         </table>-->
 
-        <table tableName="vehicle_daily_num" schema="reportdata">
+        <!--<table tableName="vehicle_daily_num" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>-->
+        <table tableName="user_login_information" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>
+
     </context>
 
 

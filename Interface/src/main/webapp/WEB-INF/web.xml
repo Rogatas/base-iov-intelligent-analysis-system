@@ -1,7 +1,127 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Interface module Report System</display-name>
+
+    <!--编码过滤器 仅限于本项目中的POST方式-->
+    <!--注册Spring提供的针对POST请求的中文乱码问题-->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--自定义实现编码过滤器-->
+    <!--<filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>utils.encoding.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+
+
+    <!--
+    Get方式解决中文乱码   tomcat下面的server.xml添加URIEncoding="UTF-8"
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+
+			   URIEncoding="UTF-8"
+
+			   />
+	-->
+
+    <!--
+    http://blog.csdn.net/sccemstanford/article/details/9039409
+     -->
+
+
+    <!--Application范围内的参数-->
+    <!--spring配置文件-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/spring/ApplicationContext-db.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+
+    <!--spring mvc的配置文件-->
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+        <!--Servlet范围内的参数-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/springmvc.xml</param-value>
+            <!--<param-value>classpath:spring.xml</param-value>-->
+        </init-param>
+        <!--启动时加载-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 配置加载log4j.properties文件路径 -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:/properties/log4j.properties</param-value>
+    </context-param>
+
+    <!-- 配置 log4j.properties 变量 -->
+    <context-param>
+        <param-name>rootLevel</param-name>
+        <param-value>DEBUG</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>loggingLevel</param-name>
+        <param-value>INFO</param-value>
+    </context-param>
+
+    <!-- 配置log4j.properties 监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+
+    <!-- session超时定义,单位为分钟 -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <!--设置首页-->
+    <welcome-file-list>
+
+        <welcome-file>/login.jsp</welcome-file>
+
+    </welcome-file-list>
+
+
 </web-app>

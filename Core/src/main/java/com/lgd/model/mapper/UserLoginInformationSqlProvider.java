@@ -49,6 +49,10 @@ public class UserLoginInformationSqlProvider {
             VALUES("password", "#{password,jdbcType=VARCHAR}");
         }
         
+        if (record.getEmail() != null) {
+            VALUES("email", "#{email,jdbcType=VARCHAR}");
+        }
+        
         return SQL();
     }
 
@@ -61,6 +65,7 @@ public class UserLoginInformationSqlProvider {
         }
         SELECT("username");
         SELECT("password");
+        SELECT("email");
         FROM("user_login_information");
         applyWhere(example, false);
         
@@ -90,6 +95,10 @@ public class UserLoginInformationSqlProvider {
             SET("password = #{record.password,jdbcType=VARCHAR}");
         }
         
+        if (record.getEmail() != null) {
+            SET("email = #{record.email,jdbcType=VARCHAR}");
+        }
+        
         applyWhere(example, true);
         return SQL();
     }
@@ -101,6 +110,7 @@ public class UserLoginInformationSqlProvider {
         SET("id = #{record.id,jdbcType=INTEGER}");
         SET("username = #{record.username,jdbcType=VARCHAR}");
         SET("password = #{record.password,jdbcType=VARCHAR}");
+        SET("email = #{record.email,jdbcType=VARCHAR}");
         
         UserLoginInformationExample example = (UserLoginInformationExample) parameter.get("example");
         applyWhere(example, true);
@@ -117,6 +127,10 @@ public class UserLoginInformationSqlProvider {
         
         if (record.getPassword() != null) {
             SET("password = #{password,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getEmail() != null) {
+            SET("email = #{email,jdbcType=VARCHAR}");
         }
         
         WHERE("id = #{id,jdbcType=INTEGER}");

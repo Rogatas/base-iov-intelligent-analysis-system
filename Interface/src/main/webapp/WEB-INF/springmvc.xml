@@ -8,5 +8,10 @@
        ">
 
        <!-- <import resource="distribute/springmvc-test.xml" />-->
-       <import resource="distribute/springmvcAnno-test.xml" />
+       <!--<import resource="distribute/springmvcAnno-test.xml" />-->
+       <!--<import resource="distribute/springmvcIntercepter-test.xml" />-->
+
+
+       <import resource="distribute/common.xml" />
+
 </beans>

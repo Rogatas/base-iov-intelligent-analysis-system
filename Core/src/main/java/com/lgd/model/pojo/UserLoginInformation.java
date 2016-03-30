@@ -7,6 +7,8 @@ public class UserLoginInformation {
 
     private String password;
 
+    private String email;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +31,13 @@ public class UserLoginInformation {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 }
