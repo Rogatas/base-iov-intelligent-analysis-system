@@ -24,6 +24,11 @@ import java.util.List;
 @RequestMapping("/login")
 public class LoginController {
 
+    //目录
+    private final String PREFIX="catalog/";
+
+    private static String username = null;
+
     @Autowired
     UserLoginInformationService userLoginInformationService;
 
@@ -51,6 +56,8 @@ public class LoginController {
         {
             session.setAttribute("user",user);
 
+            username = user.getUsername();
+
             System.out.println("login success...");
 
             return "redirect:main.do";
@@ -58,14 +65,15 @@ public class LoginController {
         System.out.println("false");
         modelMap.addAttribute("msg", "账号不存在或者密码错误!");
 
-
-
         return "forward:/login.jsp";
     }
 
 
     @RequestMapping("/main")
-    public String add(){
-        return "hello";
+    public String mianFrame(ModelMap modelMap){
+
+        modelMap.addAttribute("username",username);
+
+        return PREFIX+"main";
     }
 }
