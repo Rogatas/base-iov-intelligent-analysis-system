@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="report.lgd.content.vinDimensionCountMapper">
+
+    <resultMap id="vinDimensionCountBvoMap" type="report.lgd.bvo.VinDimensionCountBvo">
+        <result property="province" column="province" javaType="java.lang.String"/>
+        <result property="pv" column="pv" javaType="java.lang.Integer"/>
+        <result property="uvCountry" column="uv_country" javaType="java.lang.Integer"/>
+        <result property="uvOem" column="uv_oem" javaType="java.lang.Integer"/>
+        <result property="uvYear" column="uv_year" javaType="java.lang.Integer"/>
+    </resultMap>
+
+
+    <select id="query" resultMap="vinDimensionCountBvoMap">
+        <![CDATA[
+          SELECT province,pv,uv_country,uv_oem,uv_year FROM vin_dimension_count
+        ]]>
+    </select>
+
+
+</mapper>

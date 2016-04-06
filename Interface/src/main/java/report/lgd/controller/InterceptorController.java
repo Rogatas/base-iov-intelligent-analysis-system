@@ -16,6 +16,4 @@ public class InterceptorController {
         System.out.println("hello interceptor controller");
         return "hello";
     }
-
-
 }

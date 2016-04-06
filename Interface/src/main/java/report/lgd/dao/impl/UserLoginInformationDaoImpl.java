@@ -1,8 +1,6 @@
 package report.lgd.dao.impl;
 
-import com.lgd.model.mapper.UserLoginInformationMapper;
 import com.lgd.model.pojo.UserLoginInformation;
-import com.lgd.model.pojo.UserLoginInformationExample;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +31,12 @@ public class UserLoginInformationDaoImpl
     public int hasUserAndPasswd(Map map) {
 
         return getSqlSession().selectOne("report.lgd.login.userLoginMapper.hasPassNum",map);
+    }
+
+    @Override
+    public List<UserLoginInformation> queryBaseInfo(Map map) {
+
+        return getSqlSession().selectList("report.lgd.login.userLoginMapper.queryBaseInfo", map);
     }
 
 

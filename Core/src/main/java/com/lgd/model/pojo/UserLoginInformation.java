@@ -9,6 +9,8 @@ public class UserLoginInformation {
 
     private String email;
 
+    private String nickname;
+
     public Integer getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class UserLoginInformation {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 }

@@ -100,17 +100,17 @@
 
 <script type="text/javascript" src="/page/frame/js/jquery.min.js"></script>
 <script type="text/javascript" src="/page/frame/js/matrix.login.js"></script>
-<script type="text/javascript" src="/page/dev/js/login.js"></script>
+<script type="text/javascript" src="/page/dev/js/catalog/login.js"></script>
 
 
-<script type="text/javascript">
+<%--<script type="text/javascript">
     $(function(){
         var flag = '${msg}';
         if(flag != ''){
             alert(flag);
         }
     });
-</script>
+</script>--%>
 
 </body>
 

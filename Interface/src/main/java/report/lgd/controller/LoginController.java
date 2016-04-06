@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import report.lgd.service.UserLoginInformationService;
+import utils.common.UserUtils;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import java.util.List;
 
 
 /**
+ * 登录控制器
  * Created by liguodong on 2016/3/26.
  */
 
@@ -27,7 +29,7 @@ public class LoginController {
     //目录
     private final String PREFIX="catalog/";
 
-    private static String username = null;
+    //private static String username = null;
 
     @Autowired
     UserLoginInformationService userLoginInformationService;
@@ -54,10 +56,16 @@ public class LoginController {
         if(userLoginInformationService.hasUserAndPasswd
                 (user.getUsername(),user.getPassword()))
         {
-            session.setAttribute("user",user);
 
-            username = user.getUsername();
+            List<UserLoginInformation> list =
+                    userLoginInformationService.queryBaseInfo(
+                            user.getUsername(), user.getPassword());
 
+            UserLoginInformation userLoginInformation = list.get(0);
+
+            session.setAttribute("user",userLoginInformation);
+
+            //username = user.getUsername();
             System.out.println("login success...");
 
             return "redirect:main.do";
@@ -70,10 +78,25 @@ public class LoginController {
 
 
     @RequestMapping("/main")
-    public String mianFrame(ModelMap modelMap){
+    public String mianFrame(ModelMap modelMap,HttpSession session){
 
-        modelMap.addAttribute("username",username);
+        modelMap.addAttribute("username", UserUtils.getNikeOrUserName(session, "user"));
 
         return PREFIX+"main";
     }
+
+    @RequestMapping("/logout")
+    public String logout(){
+        return "forward:/login.jsp";
+    }
+
+
+    @RequestMapping("/settings")
+    public String settings(ModelMap modelMap,HttpSession session){
+
+        modelMap.addAttribute("username",UserUtils.getNikeOrUserName(session,"user"));
+
+        return PREFIX+"settings";
+    }
+
 }

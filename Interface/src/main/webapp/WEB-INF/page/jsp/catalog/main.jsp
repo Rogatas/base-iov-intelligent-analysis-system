@@ -22,15 +22,11 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/jquery.gritter.css" />
 </head>
 
-
 <body>
-
   <!--logo-->
   <div id="header">
     <h1><a>基于车联网OBD行车数据报表系统的设计与实现</a></h1>
   </div>
-
-
 
 <!--顶部菜单-->
 <!--用户，设置，登出-->
@@ -46,19 +42,23 @@
       </a>
     </li>
 
+    <!--修改密码-->
     <li class="">
-      <a title="" href="#">
-        <i class="icon icon-cog">
-        </i> <span class="text">Settings</span></a>
+      <a title="" href="${pageContext.request.contextPath}/login/settings.do">
+        <i class="icon icon-cog"></i>
+        <span class="text">Settings</span>
+      </a>
     </li>
+
+    <!--返回登录界面-->
     <li class="">
-      <a title="" href="login.html">
+      <a title="" href="${pageContext.request.contextPath}/login/logout.do" >
         <i class="icon icon-share-alt"></i>
         <span class="text">Logout</span></a>
     </li>
   </ul>
 </div>
-<!--close-top-Header-menu-->
+<!--结束顶部菜单-->
 
 
 <!--左侧菜单栏-->
@@ -68,24 +68,36 @@
     <i class="icon icon-home">
     </i> Dashboard</a>
   <ul>
-    <li class="active"><a href="index.html">
+    <li class="active">
+      <a href="${pageContext.request.contextPath}/login/main.do">
       <i class="icon icon-home"></i>
-      <span>Dashboard</span></a>
+      <span>主页</span></a>
     </li>
     <li>
-      <a href="charts.html">
+      <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do"   >
         <i class="icon icon-signal"></i>
-        <span>Charts &amp; graphs</span></a>
+        <span>VIN码各维度统计</span>
+      </a>
     </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i>
-      <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i>
-      <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i>
-      <span>Full width</span></a></li>
+
+    <li> <a href="widgets.html">
+      <i class="icon icon-inbox"></i>
+      <span>Widgets</span></a>
+    </li>
+
+    <li><a href="tables.html">
+      <i class="icon icon-th"></i>
+      <span>Tables</span></a>
+    </li>
+    <li><a href="grid.html">
+      <i class="icon icon-fullscreen"></i>
+      <span>Full width</span></a>
+    </li>
 
     <li class="submenu">
-      <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span>
+      <a href="#">
+        <i class="icon icon-th-list"></i>
+        <span>Forms</span>
         <span class="label label-important">3</span></a>
 
       <ul>
@@ -94,14 +106,17 @@
         <li><a href="form-wizard.html">Form with Wizard</a></li>
       </ul>
     </li>
+
     <li><a href="buttons.html">
       <i class="icon icon-tint"></i>
       <span>Buttons &amp; icons</span></a>
     </li>
+
     <li><a href="interface.html">
       <i class="icon icon-pencil"></i>
       <span>Eelements</span></a>
     </li>
+
   </ul>
 </div>
 <!--sidebar-menu-->
@@ -114,7 +129,8 @@
   <!--breadcrumbs-->
   <div id="content-header">
     <div id="breadcrumb">
-      <a href="index.html" title="Go to Home" class="tip-bottom">
+      <a href="${pageContext.request.contextPath}/login/main.do"
+         title="Go to Home" class="tip-bottom" >
         <i class="icon-home"></i> Home</a>
     </div>
   </div>

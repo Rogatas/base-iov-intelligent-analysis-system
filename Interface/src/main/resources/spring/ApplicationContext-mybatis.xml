@@ -29,8 +29,11 @@
     <typeAliases>
         <package name="reportdata.lgd.bvo" />
     </typeAliases>
+
     <mappers>
         <!--所有mapper文件填写位置-->
         <mapper resource="mybatis/sqlmap/userLoginMapper.xml" />
+        <mapper resource="mybatis/sqlmap/vinDimensionCountMapper.xml" />
+        <mapper resource="mybatis/sqlmap/settingsMapper.xml" />
     </mappers>
 </configuration>

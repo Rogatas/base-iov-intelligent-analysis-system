@@ -29,11 +29,22 @@ public class UserLoginInformationServiceImpl implements UserLoginInformationServ
     public boolean hasUserAndPasswd(String username, String password) {
         Map map = new HashMap();
         map.put("username",username);
-        map.put("password",password);
+        map.put("password", password);
         int numPass = userLoginInformationDao.hasUserAndPasswd(map);
 
         return numPass>0?true:false;
     }
+
+    @Override
+    public List<UserLoginInformation> queryBaseInfo(String username,String password) {
+
+        Map map = new HashMap();
+        map.put("username",username);
+        map.put("password", password);
+
+        return userLoginInformationDao.queryBaseInfo(map);
+    }
+
 
     @Override
     public List<UserLoginInformation> testQuery() {

@@ -19,4 +19,15 @@
 
         </select>
 
+        <select id="queryBaseInfo" parameterType="map" resultType="com.lgd.model.pojo.UserLoginInformation">
+            <![CDATA[
+                  SELECT username,password,email,nickname
+                   FROM user_login_information
+                    WHERE username=#{username}
+                    AND password=#{password}
+                ]]>
+
+        </select>
+
+
 </mapper>

@@ -24,9 +24,9 @@ public interface UserLoginInformationMapper {
 
     @Insert({
         "insert into user_login_information (username, password, ",
-        "email)",
+        "email, nickname)",
         "values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, ",
-        "#{email,jdbcType=VARCHAR})"
+        "#{email,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(UserLoginInformation record);
@@ -37,7 +37,7 @@ public interface UserLoginInformationMapper {
 
     @Select({
         "select",
-        "id, username, password, email",
+        "id, username, password, email, nickname",
         "from user_login_information",
         "where id = #{id,jdbcType=INTEGER}"
     })
@@ -54,7 +54,8 @@ public interface UserLoginInformationMapper {
         "update user_login_information",
         "set username = #{username,jdbcType=VARCHAR},",
           "password = #{password,jdbcType=VARCHAR},",
-          "email = #{email,jdbcType=VARCHAR}",
+          "email = #{email,jdbcType=VARCHAR},",
+          "nickname = #{nickname,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(UserLoginInformation record);
