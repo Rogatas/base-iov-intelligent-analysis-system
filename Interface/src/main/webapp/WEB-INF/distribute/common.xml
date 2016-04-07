@@ -12,6 +12,21 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        ">
 
+       <!--&lt;!&ndash;用于对象转换的json&ndash;&gt;
+       <bean id="stringConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+             <property name="supportedMediaTypes">
+                    <list>
+                           <value>text/plain;charset=UTF-8</value>
+                    </list>
+             </property>
+       </bean>
+
+       <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+
+       </bean>
+
+       <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
+       -->
 
 
        <!--配置渲染器-->

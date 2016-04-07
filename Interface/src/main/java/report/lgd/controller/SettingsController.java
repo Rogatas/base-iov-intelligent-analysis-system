@@ -13,6 +13,8 @@ import utils.common.UserUtils;
 import javax.servlet.http.HttpSession;
 
 /**
+ *
+ * 设置邮箱，密码，昵称
  * Created by liguodong on 2016/4/4.
  */
 @Controller
