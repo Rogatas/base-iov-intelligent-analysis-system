@@ -41,6 +41,11 @@ public class VinDimensionCountController {
         return PREFIX+"vinDimensionCount";
     }
 
+    /**
+     * 通过ajax返回数据到前端页面
+     * @param model
+     * @return
+     */
     @RequestMapping("/showdata")
     @ResponseBody
     public List<VinDimensionCountBvo> datas(Model model){
