@@ -11,6 +11,9 @@
 <html lang="zh-CN">
 <head>
   <title>基于车联网OBD行车数据报表系统的设计与实现</title>
+
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/bootstrap.min.css" />
@@ -21,45 +24,61 @@
 </head>
 <body>
 
-<!--Header-part-->
-<div id="header">
-  <h1><a>基于车联网OBD行车数据报表系统的设计与实现</a></h1>
-</div>
-<!--close-Header-part-->
+  <!--Header-part-->
+  <div id="header">
+    <h1><a>基于车联网OBD行车数据报表系统的设计与实现</a></h1>
+  </div>
+  <!--close-Header-part-->
 
-<!--top-Header-menu-->
+<!--顶部菜单-->
+<!--用户，设置，登出-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
     <li  class="dropdown" id="profile-messages" >
-      <a title="" href="#" data-toggle="dropdown"
-         data-target="#profile-messages" class="dropdown-toggle">
+      <a title=""  data-toggle="dropdown"
+         data-target="#profile-messages"
+         class="dropdown-toggle">
         <i class="icon icon-user"></i>
-        <span class="text">Welcome User</span>
+        <span class="text">${username}</span>
         <b class="caret"></b>
       </a>
     </li>
 
-    <li class=""><a title="" href="#">
-      <i class="icon icon-cog"></i> <span class="text">Settings</span></a>
+    <!--修改密码-->
+    <li class="">
+      <a title="" href="${pageContext.request.contextPath}/login/settings.do">
+        <i class="icon icon-cog"></i>
+        <span class="text">Settings</span>
+      </a>
     </li>
 
-    <li class=""><a title="" href="login.html">
-      <i class="icon icon-share-alt"></i>
-      <span class="text">Logout</span></a></li>
+    <!--返回登录界面-->
+    <li class="">
+      <a title="" href="${pageContext.request.contextPath}/login/logout.do" >
+        <i class="icon icon-share-alt"></i>
+        <span class="text">Logout</span></a>
+    </li>
   </ul>
 </div>
+<!--结束顶部菜单-->
 
 
 
 <!--sidebar-menu-->
 <div id="sidebar"> <a href="#" class="visible-phone">
-  <i class="icon icon-signal"></i> Charts &amp; graphs</a>
+  <i class="icon icon-signal"></i>
+  vin码各维度统计</a>
   <ul>
-    <li><a href="index.html">
-      <i class="icon icon-home"></i> <span>主页</span></a> </li>
-    <li class="active">
-      <a href="charts.html"><i class="icon icon-signal"></i>
-        <span>VIN码各维度统计</span></a>
+    <li >
+      <a href="${pageContext.request.contextPath}/login/main.do">
+        <i class="icon icon-home"></i>
+        <span>主页</span></a>
+    </li>
+    <li class="active" >
+      <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do" >
+        <i class="icon icon-signal"></i>
+        <span>VIN码各维度统计</span>
+      </a>
     </li>
 
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i>
@@ -83,6 +102,16 @@
 
 <div id="content">
 
+  <div id="content-header">
+    <div id="breadcrumb">
+      <a href="${pageContext.request.contextPath}/login/main.do"
+         title="Go to Home" class="tip-bottom">
+        <i class="icon-home"></i> 主页 </a>
+      <a class="current">VIN码各维度统计</a>
+    </div>
+  </div>
+
+
   <div class="container-fluid">
 
     <div class="row-fluid">
@@ -104,19 +133,22 @@
   </div>
 </div>
 
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.pie.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.resize.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.peity.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
 
-<script src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.pie.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/matrix.charts.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.resize.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/matrix.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/jquery.peity.min.js"></script>
-<script src="${pageContext.request.contextPath}/page/frame/js/matrix.dashboard.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/vin_dimension_count.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/vin_dimension_count.js"></script>
+
+  <script type="text/javascript">
+
+    var getContextPath = '${pageContext.request.contextPath}';
+
+  </script>
 
 </body>
 </html>

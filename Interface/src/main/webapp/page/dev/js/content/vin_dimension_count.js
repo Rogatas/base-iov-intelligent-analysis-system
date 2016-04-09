@@ -1,4 +1,48 @@
+var categoriesArr = new Array();
+var seriesPv = new Array();
+var seriesUvCountry = new Array();
+var seriesUvOem = new Array();
+var seriesUvYear = new Array();
 $(function () {
+
+    //alert(data);
+
+    $.ajax({
+        type:'post',
+        dataType:'json',
+        url:getContextPath+'/catalog/showdata.do',//请求数据的地址
+        success:function(data){
+            if(data == null || data.length == 0){
+                alert("不存在数据");
+                return;
+            }
+            //alert(data);
+
+            for(var i=0;i<data.length;i++){
+                categoriesArr[i] = data[i].province;
+                seriesPv[i] = data[i].pv;
+                seriesUvCountry[i] = data[i].uvCountry;
+                seriesUvOem[i] = data[i].uvOem;
+                seriesUvYear[i] = data[i].uvYear;
+            }
+
+        },
+        error:function(e){
+            alert("error");
+        }
+    });
+
+    $(document).ready(function() {
+        //每隔3秒自动调用方法，实现图表的实时更新
+        //window.setInterval(getHighchats,3000);
+        window.setTimeout(getHighchats,1000);
+    });
+
+
+
+});
+
+function getHighchats() {
     $('#container').highcharts({
         chart: {
             type: 'column'
@@ -10,20 +54,7 @@ $(function () {
             text: '从生产年份，生产国家以及品牌等多个维度进行统计分析'
         },
         xAxis: {
-            categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
-            ],
+            categories: categoriesArr,
             crosshair: true
         },
         yAxis: {
@@ -48,20 +79,20 @@ $(function () {
         },
         series: [{
             name: 'pv',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+            data: seriesPv
 
         }, {
             name: 'uv_country',
-            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+            data: seriesUvCountry
 
         }, {
             name: 'uv_oem',
-            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+            data: seriesUvOem
 
         }, {
             name: 'uv_year',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+            data: seriesUvYear
 
         }]
     });
-});
+}

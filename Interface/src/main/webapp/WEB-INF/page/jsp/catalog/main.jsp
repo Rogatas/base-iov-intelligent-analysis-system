@@ -36,7 +36,7 @@
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
     <li  class="dropdown" id="profile-messages" >
-      <a title="" href="#" data-toggle="dropdown"
+      <a title=""  data-toggle="dropdown"
          data-target="#profile-messages"
          class="dropdown-toggle">
         <i class="icon icon-user"></i>
@@ -69,7 +69,7 @@
 <div id="sidebar">
   <a href="#" class="visible-phone">
     <i class="icon icon-home">
-    </i> Dashboard</a>
+    </i> main</a>
   <ul>
     <li class="active">
       <a href="${pageContext.request.contextPath}/login/main.do">
@@ -77,7 +77,7 @@
       <span>主页</span></a>
     </li>
     <li>
-      <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do"   >
+      <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do" >
         <i class="icon icon-signal"></i>
         <span>VIN码各维度统计</span>
       </a>
@@ -133,7 +133,7 @@
   <div id="MainFrame-header">
     <div id="breadcrumb">
       <a title="Home" class="tip-bottom">
-        <i class="icon-home"></i> Home</a>
+        <i class="icon-home"></i> 主页 </a>
     </div>
   </div>
   <!--End-breadcrumbs-->
