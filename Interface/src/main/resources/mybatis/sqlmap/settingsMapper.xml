@@ -5,6 +5,15 @@
 <mapper namespace="report.lgd.settings.userinfo">
 
 
+    <select id="queryEmail" parameterType="map" resultType="java.lang.Integer">
+        <![CDATA[
+          SELECT count(*) FROM user_login_information
+            WHERE email=#{email}
+             ]]>
+
+    </select>
+
+
     <update id="updateBaseInfo" parameterType="map">
         update user_login_information
         <set>

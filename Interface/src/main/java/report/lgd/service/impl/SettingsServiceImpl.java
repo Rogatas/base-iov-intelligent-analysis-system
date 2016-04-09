@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import report.lgd.dao.SettingsDao;
 import report.lgd.service.SettingsService;
+import utils.encrypt.Md5Utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,8 +25,18 @@ public class SettingsServiceImpl implements SettingsService {
         this.settingsDao = settingsDao;
     }
 
+
+    @Override
+    public boolean isExistEmail(String email) {
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("email", email);
+
+        return settingsDao.queryEmail(map)>0?true:false;
+    }
+
     @Override
     public boolean updateBaseInfo(String username, String nickname, String email) {
+
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("username",username);
         map.put("nickname",nickname);
@@ -35,9 +46,12 @@ public class SettingsServiceImpl implements SettingsService {
 
     @Override
     public boolean updatePassword(String username, String password) {
+        //两次MD5加密
+        String passwd = Md5Utils.getMD5(Md5Utils.getMD5(password));
+
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("username",username);
-        map.put("password",password);
+        map.put("password",passwd);
 
         return settingsDao.updatePassword(map)==1?true:false;
     }

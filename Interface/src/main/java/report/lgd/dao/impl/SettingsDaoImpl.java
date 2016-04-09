@@ -22,6 +22,11 @@ public class SettingsDaoImpl extends SqlSessionDaoSupport implements SettingsDao
     }
 
     @Override
+    public int queryEmail(Map<String, Object> map) {
+        return this.getSqlSession().selectOne("report.lgd.settings.userinfo.queryEmail",map);
+    }
+
+    @Override
     public int updateBaseInfo(Map<String, Object> map) {
         return this.getSqlSession().update("report.lgd.settings.userinfo.updateBaseInfo",map);
     }

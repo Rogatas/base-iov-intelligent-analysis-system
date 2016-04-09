@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import report.lgd.dao.UserLoginInformationDao;
 import report.lgd.service.UserLoginInformationService;
+import utils.encrypt.Md5Utils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,9 +28,17 @@ public class UserLoginInformationServiceImpl implements UserLoginInformationServ
 
     @Override
     public boolean hasUserAndPasswd(String username, String password) {
+
+        //两次MD5加密
+        String passwd = Md5Utils.getMD5(Md5Utils.getMD5(password));
+
+        if(passwd==null){
+            return false;
+        }
+
         Map map = new HashMap();
         map.put("username",username);
-        map.put("password", password);
+        map.put("password", passwd);
         int numPass = userLoginInformationDao.hasUserAndPasswd(map);
 
         return numPass>0?true:false;
@@ -37,10 +46,12 @@ public class UserLoginInformationServiceImpl implements UserLoginInformationServ
 
     @Override
     public List<UserLoginInformation> queryBaseInfo(String username,String password) {
+        //两次MD5加密
+        String passwd = Md5Utils.getMD5(Md5Utils.getMD5(password));
 
         Map map = new HashMap();
         map.put("username",username);
-        map.put("password", password);
+        map.put("password", passwd);
 
         return userLoginInformationDao.queryBaseInfo(map);
     }

@@ -41,6 +41,16 @@ public class SettingsController {
         Object user = session.getAttribute("user");
         UserLoginInformation userLoginInformation = (UserLoginInformation)user;
 
+
+        if(settingsService.isExistEmail(email)){
+            modelMap.addAttribute("msgInfo","修改失败，邮箱已经存在，请重新输入！！！");
+
+            modelMap.addAttribute("username", UserUtils.getNikeOrUserName(userLoginInformation));
+
+            return PREFIX+"settings";
+
+        }
+
         if(settingsService.updateBaseInfo(userLoginInformation.getUsername(),nickname,email)){
             modelMap.addAttribute("msgInfo", "修改成功");
             if(nickname!=null && !nickname.equals("")){

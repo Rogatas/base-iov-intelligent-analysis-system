@@ -1,5 +1,7 @@
 package demos;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -22,8 +24,10 @@ import java.util.StringTokenizer;
 public class WordCount {
 
 
-    public static String INPUT = "hdfs://192.168.101.71:8020/input/";
-    public static String OUTPUT = "hdfs://192.168.101.71:8020/output";
+    private static String INPUT = "hdfs://192.168.101.71:8020/input/";
+    private static String OUTPUT = "hdfs://192.168.101.71:8020/output";
+    public static Log logger = LogFactory.getLog(WordCount.class);
+
 
     static {
         
