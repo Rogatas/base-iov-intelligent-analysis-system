@@ -54,7 +54,7 @@
 
     <div class="form-actions">
         <span class="pull-left">
-            <a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a>
+            <a class="flip-link btn btn-info" id="to-recover">Lost password?</a>
         </span>
 
 
@@ -72,27 +72,37 @@
   </form>
 
   <%--找回密码--%>
-  <form id="recoverform" action="#" class="form-vertical">
+  <form id="recoverform" action="${pageContext.request.contextPath}/login/losepassword.do"
+        class="form-vertical" method="post">
     <p class="normal_text">Enter your e-mail address below and
       we will send you instructions how to recover a password.
     </p>
 
     <div class="controls">
       <div class="main_input_box">
-                    <span class="add-on bg_lo">
-                        <i class="icon-envelope"></i>
-                    </span><input type="text" placeholder="E-mail address" />
+        <span class="add-on bg_lo">
+            <i class="icon-envelope"></i>
+        </span>
+          <input id="loseEmail" name="loseEmail" type="text" placeholder="E-mail address" />
+
       </div>
+
     </div>
 
     <div class="form-actions">
-                <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">
-                  &laquo; Back to login</a>
-                </span>
-                <span class="pull-right">
-                    <a class="btn btn-info"/>
-                    Reecover</a>
-                </span>
+        <span class="pull-left">
+            <a class="flip-link btn btn-success" id="to-login">
+          &laquo; Back to login</a>
+        </span>
+
+        <span class="pull-right">
+            <a id="retrievePassword" type="submit"
+               class="btn btn-info"/>Recover</a>
+        </span>
+        <span class="pull-right">
+            <a id="retrieveReset" type="button"
+               class="btn btn-danger"/>Reset</a>
+        </span>
     </div>
   </form>
 
@@ -103,14 +113,17 @@
 <script type="text/javascript" src="/page/dev/js/catalog/login.js"></script>
 
 
-<%--<script type="text/javascript">
+<script type="text/javascript">
     $(function(){
-        var flag = '${msg}';
-        if(flag != ''){
-            alert(flag);
-        }
+        $("#retrievePassword").click(function() {
+            $("#recoverform").submit();
+        });
+
+        $("#retrieveReset").click(function(){
+            $("#loseEmail").val("");
+        });
     });
-</script>--%>
+</script>
 
 </body>
 

@@ -443,6 +443,76 @@ public class UserLoginInformationExample {
             addCriterion("nickname not between", value1, value2, "nickname");
             return (Criteria) this;
         }
+
+        public Criteria andEncryptPasswordIsNull() {
+            addCriterion("encrypt_password is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordIsNotNull() {
+            addCriterion("encrypt_password is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordEqualTo(String value) {
+            addCriterion("encrypt_password =", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordNotEqualTo(String value) {
+            addCriterion("encrypt_password <>", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordGreaterThan(String value) {
+            addCriterion("encrypt_password >", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordGreaterThanOrEqualTo(String value) {
+            addCriterion("encrypt_password >=", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordLessThan(String value) {
+            addCriterion("encrypt_password <", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordLessThanOrEqualTo(String value) {
+            addCriterion("encrypt_password <=", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordLike(String value) {
+            addCriterion("encrypt_password like", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordNotLike(String value) {
+            addCriterion("encrypt_password not like", value, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordIn(List<String> values) {
+            addCriterion("encrypt_password in", values, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordNotIn(List<String> values) {
+            addCriterion("encrypt_password not in", values, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordBetween(String value1, String value2) {
+            addCriterion("encrypt_password between", value1, value2, "encryptPassword");
+            return (Criteria) this;
+        }
+
+        public Criteria andEncryptPasswordNotBetween(String value1, String value2) {
+            addCriterion("encrypt_password not between", value1, value2, "encryptPassword");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

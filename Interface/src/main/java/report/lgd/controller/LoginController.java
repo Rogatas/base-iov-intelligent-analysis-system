@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import report.lgd.service.MailService;
 import report.lgd.service.UserLoginInformationService;
 import utils.common.UserUtils;
 
@@ -36,6 +37,13 @@ public class LoginController {
 
     public void setUserLoginInformationService(UserLoginInformationService userLoginInformationService) {
         this.userLoginInformationService = userLoginInformationService;
+    }
+
+    @Autowired
+    MailService mailService;
+
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
     }
 
     @RequestMapping("/passwdauth")
@@ -85,6 +93,32 @@ public class LoginController {
         return PREFIX+"main";
     }
 
+
+    @RequestMapping("/losepassword")
+    public String findPassword(final String loseEmail,ModelMap modelMap){
+
+        System.out.println("邮箱：-->"+loseEmail);
+
+
+        if(loseEmail==null || loseEmail.trim().equals("")){
+            modelMap.addAttribute("msg", "邮箱不能为空！");
+
+            return "forward:/login.jsp";
+        }
+
+        if(mailService.isEmailExists(loseEmail)){
+            mailService.sendMail(loseEmail);
+        }else{
+            modelMap.addAttribute("msg", "邮箱不存在，请重新输入!");
+            return "forward:/login.jsp";
+        }
+
+
+        modelMap.addAttribute("msg", "密码已发送，请注意查收！");
+        return "forward:/login.jsp";
+    }
+
+
     @RequestMapping("/logout")
     public String logout(){
         return "forward:/login.jsp";
@@ -98,5 +132,10 @@ public class LoginController {
 
         return PREFIX+"settings";
     }
+
+
+
+
+
 
 }

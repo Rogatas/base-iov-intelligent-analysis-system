@@ -18,6 +18,7 @@
         <!-- optional, 旨在创建class时,对注释进行控制 -->
         <commentGenerator>
             <property name="suppressDate" value="false"/>
+
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>

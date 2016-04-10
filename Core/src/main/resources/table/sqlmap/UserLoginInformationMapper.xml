@@ -7,6 +7,7 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="encrypt_password" jdbcType="VARCHAR" property="encryptPassword" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, password, email, nickname
+    id, username, password, email, nickname, encrypt_password
   </sql>
   <select id="selectByExample" parameterType="com.lgd.model.pojo.UserLoginInformationExample" resultMap="BaseResultMap">
     select
@@ -107,6 +108,9 @@
       <if test="nickname != null">
         nickname,
       </if>
+      <if test="encryptPassword != null">
+        encrypt_password,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="username != null">
@@ -120,6 +124,9 @@
       </if>
       <if test="nickname != null">
         #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="encryptPassword != null">
+        #{encryptPassword,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -147,6 +154,9 @@
       <if test="record.nickname != null">
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
+      <if test="record.encryptPassword != null">
+        encrypt_password = #{record.encryptPassword,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -158,7 +168,8 @@
       username = #{record.username,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       email = #{record.email,jdbcType=VARCHAR},
-      nickname = #{record.nickname,jdbcType=VARCHAR}
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      encrypt_password = #{record.encryptPassword,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -178,7 +189,11 @@
       <if test="nickname != null">
         nickname = #{nickname,jdbcType=VARCHAR},
       </if>
+      <if test="encryptPassword != null">
+        encrypt_password = #{encryptPassword,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

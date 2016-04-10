@@ -33,9 +33,11 @@
             <if test="password != null">
                 password = #{password,jdbcType=VARCHAR},
             </if>
+            <if test="encryptPassword != null">
+                encrypt_password = #{encryptPassword,jdbcType=VARCHAR},
+            </if>
         </set>
         where username = #{username,jdbcType=VARCHAR}
     </update>
-
 
 </mapper>

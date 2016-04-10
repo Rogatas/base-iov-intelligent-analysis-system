@@ -94,6 +94,7 @@
                             <property name="allowedPass">
                                    <list>
                                           <value>passwdauth.do</value>
+                                          <value>losepassword.do</value>
                                    </list>
                             </property>
                      </bean>

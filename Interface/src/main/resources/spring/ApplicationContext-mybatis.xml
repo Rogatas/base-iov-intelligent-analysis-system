@@ -35,5 +35,6 @@
         <mapper resource="mybatis/sqlmap/userLoginMapper.xml" />
         <mapper resource="mybatis/sqlmap/vinDimensionCountMapper.xml" />
         <mapper resource="mybatis/sqlmap/settingsMapper.xml" />
+        <mapper resource="mybatis/sqlmap/mailMapper.xml" />
     </mappers>
 </configuration>

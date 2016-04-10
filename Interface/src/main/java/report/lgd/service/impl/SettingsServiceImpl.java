@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import report.lgd.dao.SettingsDao;
 import report.lgd.service.SettingsService;
-import utils.encrypt.Md5Utils;
+import utils.endecrypt.Md5Utils;
+import utils.endecrypt.XorUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,9 +50,12 @@ public class SettingsServiceImpl implements SettingsService {
         //两次MD5加密
         String passwd = Md5Utils.getMD5(Md5Utils.getMD5(password));
 
+        String encryptPassword = XorUtils.EnDecrypt(passwd,password);
+
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("username",username);
         map.put("password",passwd);
+        map.put("encryptPassword",encryptPassword);
 
         return settingsDao.updatePassword(map)==1?true:false;
     }

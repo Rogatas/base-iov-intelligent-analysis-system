@@ -11,6 +11,8 @@ public class UserLoginInformation {
 
     private String nickname;
 
+    private String encryptPassword;
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +51,13 @@ public class UserLoginInformation {
 
     public void setNickname(String nickname) {
         this.nickname = nickname == null ? null : nickname.trim();
+    }
+
+    public String getEncryptPassword() {
+        return encryptPassword;
+    }
+
+    public void setEncryptPassword(String encryptPassword) {
+        this.encryptPassword = encryptPassword == null ? null : encryptPassword.trim();
     }
 }

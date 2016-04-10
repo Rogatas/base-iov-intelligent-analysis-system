@@ -1,4 +1,4 @@
-package utils.encrypt;
+package utils.endecrypt;
 
 import java.security.MessageDigest;
 

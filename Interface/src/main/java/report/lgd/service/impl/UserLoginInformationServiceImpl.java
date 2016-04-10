@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import report.lgd.dao.UserLoginInformationDao;
 import report.lgd.service.UserLoginInformationService;
-import utils.encrypt.Md5Utils;
+import utils.endecrypt.Md5Utils;
 
 import java.util.HashMap;
 import java.util.List;
