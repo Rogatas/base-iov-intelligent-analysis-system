@@ -24,7 +24,7 @@
 
     <select id="queryPassword" parameterType="map" resultMap="UserResultMap">
         <![CDATA[
-              SELECT password,encrypt_password FROM user_login_information
+              SELECT username,password,encrypt_password FROM user_login_information
                 WHERE email=#{email}
             ]]>
     </select>

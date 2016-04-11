@@ -55,7 +55,7 @@ public class MailServiceImpl implements MailService{
 
         //解密
         String decryptPassword =
-                XorUtils.EnDecrypt(user.getPassword(),user.getEncryptPassword());
+                XorUtils.Decrypt(user.getEncryptPassword());
 
         MailBvo info = new MailBvo();
         info.setHost("smtp.163.com");
@@ -66,7 +66,7 @@ public class MailServiceImpl implements MailService{
         info.setToAddress(email);
 
         info.setSubject("基于车联网OBD行车数据报表系统，密码已找回，请查收！");
-        info.setContent("你的密码为："+decryptPassword);
+        info.setContent("你的用户名为："+user.getUsername()+",你的密码为："+decryptPassword+".");
 
         try {
             //发送文本邮件

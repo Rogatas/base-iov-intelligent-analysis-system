@@ -50,7 +50,8 @@ public class SettingsServiceImpl implements SettingsService {
         //两次MD5加密
         String passwd = Md5Utils.getMD5(Md5Utils.getMD5(password));
 
-        String encryptPassword = XorUtils.EnDecrypt(passwd,password);
+        //加密
+        String encryptPassword = XorUtils.Encrypt(password);
 
         Map<String,Object> map = new HashMap<String,Object>();
         map.put("username",username);
