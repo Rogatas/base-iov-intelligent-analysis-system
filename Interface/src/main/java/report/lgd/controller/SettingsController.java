@@ -82,6 +82,10 @@ public class SettingsController {
             ModelMap modelMap,
             HttpSession session){
 
+        Object user = session.getAttribute("user");
+        UserLoginInformation userLoginInformation = (UserLoginInformation)user;
+        modelMap.addAttribute("username", UserUtils.getNikeOrUserName(userLoginInformation));
+
         if(passwd==null || passwd.equals("") ||
                 passwdConfirm==null || passwdConfirm.equals("")){
             modelMap.addAttribute("msgPasswd","密码不能为空");
@@ -93,9 +97,12 @@ public class SettingsController {
             return PREFIX+"settings";
         }
 
+        if(!UserUtils.isPasswordFormat(passwd)){
+            modelMap.addAttribute("msgPasswd", "密码格式不正确，请重新输入，只能为字母数字下划线。");
 
-        Object user = session.getAttribute("user");
-        UserLoginInformation userLoginInformation = (UserLoginInformation)user;
+            return PREFIX+"settings";
+        }
+
 
 
         if(settingsService.updatePassword(userLoginInformation.getUsername(),passwd)){
@@ -104,7 +111,7 @@ public class SettingsController {
             modelMap.addAttribute("msgPasswd","修改失败");
         }
 
-        modelMap.addAttribute("username", UserUtils.getNikeOrUserName(userLoginInformation));
+       // modelMap.addAttribute("username", UserUtils.getNikeOrUserName(userLoginInformation));
 
         return PREFIX+"settings";
     }

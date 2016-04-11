@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -57,6 +59,12 @@ public class LoginController {
         if(user.getUsername()==null || user.getPassword() ==null ||
                 user.getUsername().equals("")||user.getPassword().equals("")){
             modelMap.addAttribute("msg", "账号或者密码不能为空!");
+
+            return "forward:/login.jsp";
+        }
+
+        if(!UserUtils.isPasswordFormat(user.getPassword())){
+            modelMap.addAttribute("msg", "密码格式不正确，请重新输入!");
 
             return "forward:/login.jsp";
         }
