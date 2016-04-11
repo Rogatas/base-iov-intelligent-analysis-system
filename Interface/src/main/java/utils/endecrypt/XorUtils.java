@@ -60,6 +60,10 @@ public class XorUtils {
             if(primalPassword.charAt(i)<='Z'&&primalPassword.charAt(i)>='A'){
                 stringBuilder.append(chs[primalPassword.charAt(i)-65+39]);
             }
+            if(primalPassword.charAt(i)=='_'){
+                stringBuilder.append('*');
+            }
+
         }
         return stringBuilder.toString();
     }
@@ -98,6 +102,9 @@ public class XorUtils {
                 stringBuilder.append('Z');
             }
 
+            if(primalPassword.charAt(i)=='*'){
+                stringBuilder.append('_');
+            }
 
         }
         return stringBuilder.toString();
@@ -131,7 +138,7 @@ public class XorUtils {
         /*System.out.println(EnDecrypt("7a642d326daa0bb88db5e39416ca138a", "[\bQA] \\\\Q"));
         System.out.println(EnDecrypt("c3284d0f94606de1fd2af172aba15bf3", "\u0002W_QZ"));
         System.out.println(EnDecrypt("b9be11166d72e9e3ae7fd407165e4bd2", "\u0010V\n\u0011"));*/
-        String password = "09azAZ";
+        String password = "09azAZ_liguodong";
         System.out.println(XorUtils.Encrypt(password));
         System.out.println(XorUtils.Decrypt(XorUtils.Encrypt(password)));
 
