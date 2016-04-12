@@ -29,7 +29,7 @@ import java.io.IOException;
 
 public class ObdImmediateParametersTask {
 
-    private final static String INPUTPATH = "hdfs://192.168.101.71:8020/input/obd_immediate_parameters.csv";
+    private final static String INPUTPATH = "hdfs://192.168.101.71:8020/input/obd_immediate_parameters";
     private final static String OUTPUTPATH = "hdfs://192.168.101.71:8020/output/ObdImmediateParameters";
     public static Log logger = LogFactory.getLog(ObdImmediateParametersTask.class);
 

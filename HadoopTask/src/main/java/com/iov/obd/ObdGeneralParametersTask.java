@@ -34,12 +34,16 @@ import java.io.IOException;
  * 当前冷却液水温	平均冷却液水温	最小冷却液水温	最大冷却液水温
  * 当前蒸汽压力	平均蒸汽压力	最小蒸汽压力	最大蒸汽压力
  * 入库时间
-
+ *
+ * 352016802932327 1       1       1       2       33      32      30
+ * 33      7.2     7.4     7.18    18.56   20.4    20.5    19.2
+ * 20.8    67      64      25      67      0       0       0       0       20140703
+ *
  * Created by liguodong on 2016/4/9.
  */
 public class ObdGeneralParametersTask {
 
-    private final static String INPUTPATH = "hdfs://192.168.101.71:8020/input/obd_general_parameters.csv";
+    private final static String INPUTPATH = "hdfs://192.168.101.71:8020/input/obd_general_parameters";
     private final static String OUTPUTPATH = "hdfs://192.168.101.71:8020/output/ObdGeneralParameters";
     public static Log logger = LogFactory.getLog(ObdImmediateParametersTask.class);
 
@@ -78,7 +82,7 @@ public class ObdGeneralParametersTask {
 
         @Override
         protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            String[] strArr = value.toString().split(",");
+            String[] strArr = value.toString().split(" ");
             StringBuilder stringBuilder = new StringBuilder();
 
             for (int i = 0; i < 5; i++) {
