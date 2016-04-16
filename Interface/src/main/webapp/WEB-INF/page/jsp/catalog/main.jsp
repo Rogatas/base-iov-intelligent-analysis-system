@@ -49,7 +49,7 @@
     <li class="">
       <a title="" href="${pageContext.request.contextPath}/login/settings.do">
         <i class="icon icon-cog"></i>
-        <span class="text">Settings</span>
+        <span class="text">设置</span>
       </a>
     </li>
 
@@ -57,7 +57,7 @@
     <li class="">
       <a title="" href="${pageContext.request.contextPath}/login/logout.do" >
         <i class="icon icon-share-alt"></i>
-        <span class="text">Logout</span></a>
+        <span class="text">退出</span></a>
     </li>
   </ul>
 </div>
@@ -82,6 +82,25 @@
         <span>VIN码各维度统计</span>
       </a>
     </li>
+
+
+    <li>
+      <a href="${pageContext.request.contextPath}/catalog/vehicleMaxCount/index.do">
+        <i class="icon icon-inbox">
+        </i>
+        <span>车辆参数极值统计</span></a>
+    </li>
+
+    <li><a href="${pageContext.request.contextPath}/catalog/percentageCount/index.do">
+      <i class="icon icon-th"></i>
+      <span>车辆参数范围占比统计</span></a>
+    </li>
+
+    <li><a href="${pageContext.request.contextPath}/catalog/vehicleEngineLoadRange/index.do">
+      <i class="icon icon-fullscreen"></i>
+      <span>引擎转速范围统计</span></a>
+    </li>
+
 
     <li> <a href="widgets.html">
       <i class="icon icon-inbox"></i>

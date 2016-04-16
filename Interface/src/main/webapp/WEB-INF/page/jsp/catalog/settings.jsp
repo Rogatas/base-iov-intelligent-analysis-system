@@ -53,7 +53,7 @@
     <li class="">
       <a title="" href="${pageContext.request.contextPath}/login/settings.do">
         <i class="icon icon-cog"></i>
-        <span class="text">Settings</span>
+        <span class="text">设置</span>
       </a>
     </li>
 
@@ -61,7 +61,7 @@
     <li class="">
       <a title="" href="${pageContext.request.contextPath}/login/logout.do" >
         <i class="icon icon-share-alt"></i>
-        <span class="text">Logout</span></a>
+        <span class="text">退出</span></a>
     </li>
 
   </ul>

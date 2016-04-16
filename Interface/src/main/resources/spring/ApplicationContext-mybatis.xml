@@ -36,5 +36,6 @@
         <mapper resource="mybatis/sqlmap/vinDimensionCountMapper.xml" />
         <mapper resource="mybatis/sqlmap/settingsMapper.xml" />
         <mapper resource="mybatis/sqlmap/mailMapper.xml" />
+        <mapper resource="mybatis/sqlmap/vehicleMaxCountMapper.xml" />
     </mappers>
 </configuration>

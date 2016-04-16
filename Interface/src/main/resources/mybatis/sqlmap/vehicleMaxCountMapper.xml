@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="report.lgd.content.vehicleMaxCountMapper">
+
+    <resultMap id="vehicleMaxCountMap" type="com.lgd.model.pojo.VehicleMaxCount" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="short_id" property="innerId" jdbcType="VARCHAR" />
+        <result column="max_speed" property="maxSpeed" jdbcType="INTEGER" />
+        <result column="max_mileage" property="maxMileage" jdbcType="INTEGER" />
+        <result column="max_engine_speed" property="maxEngineSpeed" jdbcType="INTEGER" />
+        <result column="max_engine_tem" property="maxEngineTem" jdbcType="INTEGER" />
+        <result column="max_engine_load" property="maxEngineLoad" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="query" resultMap="vehicleMaxCountMap">
+        <![CDATA[
+          select RIGHT(inner_id,4) AS short_id,max_speed,max_mileage,max_engine_speed,
+          max_engine_tem,max_engine_load
+            from vehicle_max_count
+        ]]>
+    </select>
+
+
+</mapper>

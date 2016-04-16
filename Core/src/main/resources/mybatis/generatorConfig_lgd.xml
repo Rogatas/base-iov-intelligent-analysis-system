@@ -88,17 +88,45 @@
 
         <!--<table tableName="students" schema="mytatis">
         </table>-->
-
         <!--<table tableName="vehicle_daily_num" schema="reportdata">
+                   <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+       </table>-->
+
+       <!-- <table tableName="user_login_information" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>-->
-        <table tableName="user_login_information" schema="reportdata">
+
+        <!--<table tableName="vin_dimension_count" schema="reportdata">
+                    <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>-->
+
+        <table tableName="vehicle_max_count" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>
 
-        <!--<table tableName="vin_dimension_count" schema="reportdata">
+
+        <table tableName="vehicle_speed_range" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
-        </table>-->
+        </table>
+
+
+        <table tableName="vehicle_engine_speed_range" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
+
+        <table tableName="vehicle_engine_tem_range" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
+
+        <table tableName="vehicle_engine_load_range" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
+
+        <table tableName="recent_engine_speed_range" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
+
+
 
     </context>
 

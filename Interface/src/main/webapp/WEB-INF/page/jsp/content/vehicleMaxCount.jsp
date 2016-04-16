@@ -1,18 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: liguodong
-  Date: 2016/4/3
-  Time: 12:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java"  import="java.util.*"  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <title>基于车联网OBD行车数据报表系统的设计与实现</title>
-
-
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +12,16 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/matrix-style.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/matrix-media.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/font-awesome/css/font-awesome.css" />
+
+  <style type="text/css">
+    #container {
+      height: 600px;
+      min-width: 310px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -65,33 +66,59 @@
 
 
 <!--sidebar-menu-->
-<div id="sidebar"> <a href="#" class="visible-phone">
+<div id="sidebar">
+  <a href="#" class="visible-phone">
   <i class="icon icon-signal"></i>
-  vin码各维度统计</a>
+  车辆参数极值统计</a>
   <ul>
     <li >
       <a href="${pageContext.request.contextPath}/login/main.do">
         <i class="icon icon-home"></i>
         <span>主页</span></a>
     </li>
-    <li class="active" >
+    <li  >
       <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do" >
         <i class="icon icon-signal"></i>
         <span>VIN码各维度统计</span>
       </a>
     </li>
 
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i>
-      <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i>
-      <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i>
-      <span>Full width</span></a>
+    <li class="active">
+      <a href="${pageContext.request.contextPath}/catalog/vehicleMaxCount/index.do">
+      <i class="icon icon-inbox">
+      </i>
+      <span>车辆参数极值统计</span></a>
     </li>
+
+
+    <li><a href="${pageContext.request.contextPath}/catalog/percentageCount/index.do">
+      <i class="icon icon-th"></i>
+      <span>车辆参数范围占比统计</span></a>
+    </li>
+
+    <li><a href="${pageContext.request.contextPath}/catalog/vehicleEngineLoadRange/index.do">
+      <i class="icon icon-fullscreen"></i>
+      <span>引擎转速范围统计</span></a>
+    </li>
+
+    <li class="submenu">
+      <a href="#"><i class="icon icon-th-list"></i>
+        <span>Forms</span> <span class="label label-important">3</span>
+      </a>
+      <ul>
+        <li><a href="form-common.html">Basic Form</a></li>
+        <li><a href="form-validation.html">Form with Validation</a></li>
+        <li><a href="form-wizard.html">Form with Wizard</a></li>
+      </ul>
+    </li>
+
     <li><a href="buttons.html">
       <i class="icon icon-tint"></i>
-      <span>Buttons &amp; icons</span></a></li>
-    <li><a href="interface.html">
+      <span>Buttons &amp; icons</span></a>
+    </li>
+
+    <li>
+      <a href="interface.html">
       <i class="icon icon-pencil"></i>
       <span>Eelements</span></a>
     </li>
@@ -100,6 +127,7 @@
   </ul>
 </div>
 
+
 <div id="content">
 
   <div id="content-header">
@@ -107,7 +135,7 @@
       <a href="${pageContext.request.contextPath}/login/main.do"
          title="Go to Home" class="tip-bottom">
         <i class="icon-home"></i> 主页 </a>
-      <a class="current">VIN码各维度统计</a>
+      <a class="current">车辆参数极值统计</a>
     </div>
   </div>
 
@@ -117,14 +145,19 @@
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-signal"></i> </span>
-            <h5>维度统计</h5>
+          <div class="widget-title">
+            <span class="icon">
+              <i class="icon-signal"></i>
+            </span>
+            <h5>极值统计</h5>
           </div>
+
           <div class="widget-content">
 
-            <div id="container"
-                 style="min-width: 310px; height: 400px; margin: 0 auto">
+
+            <div id="container" style="height: 400px">
             </div>
+
           </div>
         </div>
       </div>
@@ -141,8 +174,9 @@
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.peity.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts-3d.js"></script>
 
-  <script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/vin_dimension_count.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/vehicle_max_count.js"></script>
 
   <script type="text/javascript">
 
