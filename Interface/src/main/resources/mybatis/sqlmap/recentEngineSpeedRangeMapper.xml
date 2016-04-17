@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="report.lgd.content.recentEngineSpeedRangeMapper">
+
+    <resultMap id="recentEngineSpeedRangeMap" type="com.lgd.model.pojo.RecentEngineSpeedRange" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="short_id" property="innerId" jdbcType="VARCHAR" />
+        <result column="max_speed" property="maxSpeed" jdbcType="INTEGER" />
+        <result column="min_speed" property="minSpeed" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="query" resultMap="recentEngineSpeedRangeMap">
+        <![CDATA[
+          select RIGHT(inner_id,4) AS short_id,max_speed,min_speed
+            from recent_engine_speed_range
+        ]]>
+    </select>
+
+</mapper>

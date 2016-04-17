@@ -1,35 +1,35 @@
 package report.lgd.controller;
 
+import com.lgd.model.pojo.RecentEngineSpeedRange;
 import com.lgd.model.pojo.VehicleMaxCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import report.lgd.service.VehicleMaxCountService;
+import report.lgd.service.RecentEngineSpeedRangeService;
 import utils.common.UserUtils;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 车辆参数极值统计
- * Created by liguodong on 2016/4/16.
+ * Created by liguodong on 2016/4/17.
  */
 
+
 @Controller
-@RequestMapping("/catalog/vehicleMaxCount")
-public class VehicleMaxCountController {
+@RequestMapping("/catalog/recentEngineSpeedRange")
+public class RecentEngineSpeedRangeController {
 
     //目录
     private final String PREFIX="content/";
 
-
     @Autowired
-    VehicleMaxCountService vehicleMaxCountService;
+    RecentEngineSpeedRangeService recentEngineSpeedRangeService;
 
-    public void setVehicleMaxCountService(VehicleMaxCountService vehicleMaxCountService) {
-        this.vehicleMaxCountService = vehicleMaxCountService;
+    public void setRecentEngineSpeedRangeService(RecentEngineSpeedRangeService recentEngineSpeedRangeService) {
+        this.recentEngineSpeedRangeService = recentEngineSpeedRangeService;
     }
 
     @RequestMapping("/index")
@@ -38,8 +38,9 @@ public class VehicleMaxCountController {
         model.addAttribute("datas",list);*/
         model.addAttribute("username", UserUtils.getNikeOrUserName(session, "user"));
 
-        return PREFIX+"vehicleMaxCount";
+        return PREFIX+"recentEngineSpeedRange";
     }
+
 
 
     /**
@@ -49,13 +50,11 @@ public class VehicleMaxCountController {
      */
     @RequestMapping("/showdata")
     @ResponseBody
-    public List<VehicleMaxCount> datas(Model model){
+    public List<RecentEngineSpeedRange> datas(Model model){
 
-        List<VehicleMaxCount> list = vehicleMaxCountService.query();
+        List<RecentEngineSpeedRange> list = recentEngineSpeedRangeService.query();
         //model.addAttribute("datas",list);
-
         return list;
     }
-
 
 }

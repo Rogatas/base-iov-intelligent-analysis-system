@@ -35,13 +35,15 @@ $(function ()
     $(document).ready(function() {
         //每隔3秒自动调用方法，实现图表的实时更新
         //window.setInterval(getHighchats,3000);
-        window.setTimeout(getHighchats,2000);
+        window.setTimeout(getHighchats,1000);
     });
 
 });
 
 function getHighchats(){
     $('#container').highcharts({
+        credits: {  enabled: false},    //去掉highcharts.com商标
+        exporting: { enabled: false },  //去掉chart不必要属性
         chart: {
             type: 'column',
             margin: 75,

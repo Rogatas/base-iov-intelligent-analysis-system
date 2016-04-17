@@ -44,6 +44,8 @@ $(function () {
 
 function getHighchats() {
     $('#container').highcharts({
+        credits: {  enabled: false},    //去掉highcharts.com商标
+        exporting: { enabled: false },  //去掉chart不必要属性
         chart: {
             type: 'column'
         },

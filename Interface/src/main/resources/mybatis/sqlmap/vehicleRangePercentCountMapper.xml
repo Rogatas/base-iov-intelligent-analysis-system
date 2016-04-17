@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="report.lgd.content.vehicleRangePercentCountMapper">
+
+
+    <resultMap id="vehicleSpeedRangeMap" type="com.lgd.model.pojo.VehicleSpeedRange" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="vehicle_speed" property="vehicleSpeed" jdbcType="VARCHAR" />
+        <result column="num" property="num" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="querySpeed" resultMap="vehicleSpeedRangeMap">
+        <![CDATA[
+          SELECT vehicle_speed,num FROM vehicle_speed_range
+          WHERE vehicle_speed IS NOT NULL
+        ]]>
+    </select>
+
+
+
+    <resultMap id="vehicleEngineSpeedRangeMap" type="com.lgd.model.pojo.VehicleEngineSpeedRange" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="vehicle_engine_speed" property="vehicleEngineSpeed" jdbcType="VARCHAR" />
+        <result column="num" property="num" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="queryEngineSpeed" resultMap="vehicleEngineSpeedRangeMap">
+        <![CDATA[
+          SELECT vehicle_engine_speed,num FROM vehicle_engine_speed_range
+          WHERE vehicle_engine_speed != 'NULL'
+        ]]>
+    </select>
+
+
+    <resultMap id="vehicleEngineTemMap" type="com.lgd.model.pojo.VehicleEngineTemRange" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="vehicle_engine_tem" property="vehicleEngineTem" jdbcType="VARCHAR" />
+        <result column="num" property="num" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="queryEngineTem" resultMap="vehicleEngineTemMap">
+        <![CDATA[
+          SELECT vehicle_engine_tem,num FROM vehicle_engine_tem_range
+          WHERE vehicle_engine_tem != 'NULL'
+        ]]>
+    </select>
+
+
+
+    <resultMap id="vehicleEngineLoadRangeMap" type="com.lgd.model.pojo.VehicleEngineLoadRange" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="vehicle_engine_load" property="vehicleEngineLoad" jdbcType="VARCHAR" />
+        <result column="num" property="num" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="queryEngineLoad" resultMap="vehicleEngineLoadRangeMap">
+        <![CDATA[
+          SELECT vehicle_engine_load,num FROM vehicle_engine_load_range
+          WHERE vehicle_engine_load != 'NULL'
+        ]]>
+    </select>
+
+
+
+</mapper>

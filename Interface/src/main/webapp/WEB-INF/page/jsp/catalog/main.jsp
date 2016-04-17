@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: liguodong
-  Date: 2016/3/31
-  Time: 21:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -20,6 +13,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/matrix-style.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/matrix-media.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/jquery.gritter.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/font-awesome/css/font-awesome.css" />
 
   <!--me-->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/page/frame/css/main.css" />
@@ -67,22 +61,23 @@
 <!--左侧菜单栏-->
 <!--sidebar-menu-->
 <div id="sidebar">
-  <a href="#" class="visible-phone">
+  <a class="visible-phone">
     <i class="icon icon-home">
     </i> main</a>
   <ul>
+
     <li class="active">
       <a href="${pageContext.request.contextPath}/login/main.do">
       <i class="icon icon-home"></i>
       <span>主页</span></a>
     </li>
+
     <li>
       <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do" >
         <i class="icon icon-signal"></i>
         <span>VIN码各维度统计</span>
       </a>
     </li>
-
 
     <li>
       <a href="${pageContext.request.contextPath}/catalog/vehicleMaxCount/index.do">
@@ -91,12 +86,14 @@
         <span>车辆参数极值统计</span></a>
     </li>
 
-    <li><a href="${pageContext.request.contextPath}/catalog/percentageCount/index.do">
+    <li>
+      <a href="${pageContext.request.contextPath}/catalog/vehicleRangePercentCount/index.do">
       <i class="icon icon-th"></i>
-      <span>车辆参数范围占比统计</span></a>
+      <span>车辆参数范围占比统计</span>
+      </a>
     </li>
 
-    <li><a href="${pageContext.request.contextPath}/catalog/vehicleEngineLoadRange/index.do">
+    <li><a href="${pageContext.request.contextPath}/catalog/recentEngineSpeedRange/index.do">
       <i class="icon icon-fullscreen"></i>
       <span>引擎转速范围统计</span></a>
     </li>
