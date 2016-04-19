@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="report.lgd.content.baseInfoVehicleInnerMapper">
+
+    <resultMap id="baseInfoVehicleInnerMap" type="com.lgd.model.pojo.BaseInfoVehicleInner" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="short_id" property="innerId" jdbcType="VARCHAR" />
+        <result column="min_oil_wear" property="minOilWear" jdbcType="DOUBLE" />
+        <result column="average_oil_wear" property="averageOilWear" jdbcType="DOUBLE" />
+        <result column="max_oil_wear" property="maxOilWear" jdbcType="DOUBLE" />
+        <result column="min_intake_tem" property="minIntakeTem" jdbcType="DOUBLE" />
+        <result column="average_intake_tem" property="averageIntakeTem" jdbcType="DOUBLE" />
+        <result column="max_intake_tem" property="maxIntakeTem" jdbcType="DOUBLE" />
+        <result column="min_air_flow" property="minAirFlow" jdbcType="DOUBLE" />
+        <result column="average_air_flow" property="averageAirFlow" jdbcType="DOUBLE" />
+        <result column="max_air_flow" property="maxAirFlow" jdbcType="DOUBLE" />
+        <result column="min_battery_voltage" property="minBatteryVoltage" jdbcType="DOUBLE" />
+        <result column="average_battery_voltage" property="averageBatteryVoltage" jdbcType="DOUBLE" />
+        <result column="max_battery_voltage" property="maxBatteryVoltage" jdbcType="DOUBLE" />
+        <result column="min_coolant_tem" property="minCoolantTem" jdbcType="DOUBLE" />
+        <result column="average_coolant_tem" property="averageCoolantTem" jdbcType="DOUBLE" />
+        <result column="max_coolant_tem" property="maxCoolantTem" jdbcType="DOUBLE" />
+    </resultMap>
+
+
+    <select id="queryMax" resultMap="baseInfoVehicleInnerMap">
+        <![CDATA[
+          select right(inner_id,4) as short_id, max_oil_wear,max_intake_tem,max_air_flow,
+            max_battery_voltage,max_coolant_tem
+            from base_info_vehicle_inner
+        ]]>
+    </select>
+
+    <select id="queryAverage" resultMap="baseInfoVehicleInnerMap">
+        <![CDATA[
+            select right(inner_id,4) as short_id,average_oil_wear,average_intake_tem,average_air_flow,
+            average_battery_voltage,average_coolant_tem
+            from base_info_vehicle_inner
+        ]]>
+    </select>
+
+
+    <select id="queryMin" resultMap="baseInfoVehicleInnerMap">
+        <![CDATA[
+            select right(inner_id,4) as short_id,min_oil_wear, min_intake_tem,min_air_flow,
+            min_battery_voltage,min_coolant_tem
+            from base_info_vehicle_inner
+        ]]>
+    </select>
+
+
+
+
+</mapper>

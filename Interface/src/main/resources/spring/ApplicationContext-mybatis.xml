@@ -39,6 +39,8 @@
         <mapper resource="mybatis/sqlmap/vehicleMaxCountMapper.xml" />
         <mapper resource="mybatis/sqlmap/vehicleRangePercentCountMapper.xml" />
         <mapper resource="mybatis/sqlmap/recentEngineSpeedRangeMapper.xml" />
+        <mapper resource="mybatis/sqlmap/baseInfoVehicleInnerMapper.xml" />
+
     </mappers>
 
 

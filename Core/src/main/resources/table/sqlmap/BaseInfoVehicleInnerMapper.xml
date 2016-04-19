@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lgd.model.mapper.BaseInfoVehicleInnerMapper" >
+  <resultMap id="BaseResultMap" type="com.lgd.model.pojo.BaseInfoVehicleInner" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="inner_id" property="innerId" jdbcType="VARCHAR" />
+    <result column="min_oil_wear" property="minOilWear" jdbcType="DOUBLE" />
+    <result column="average_oil_wear" property="averageOilWear" jdbcType="DOUBLE" />
+    <result column="max_oil_wear" property="maxOilWear" jdbcType="DOUBLE" />
+    <result column="min_intake_tem" property="minIntakeTem" jdbcType="DOUBLE" />
+    <result column="average_intake_tem" property="averageIntakeTem" jdbcType="DOUBLE" />
+    <result column="max_intake_tem" property="maxIntakeTem" jdbcType="DOUBLE" />
+    <result column="min_air_flow" property="minAirFlow" jdbcType="DOUBLE" />
+    <result column="average_air_flow" property="averageAirFlow" jdbcType="DOUBLE" />
+    <result column="max_air_flow" property="maxAirFlow" jdbcType="DOUBLE" />
+    <result column="min_battery_voltage" property="minBatteryVoltage" jdbcType="DOUBLE" />
+    <result column="average_battery_voltage" property="averageBatteryVoltage" jdbcType="DOUBLE" />
+    <result column="max_battery_voltage" property="maxBatteryVoltage" jdbcType="DOUBLE" />
+    <result column="min_coolant_tem" property="minCoolantTem" jdbcType="DOUBLE" />
+    <result column="average_coolant_tem" property="averageCoolantTem" jdbcType="DOUBLE" />
+    <result column="max_coolant_tem" property="maxCoolantTem" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, inner_id, min_oil_wear, average_oil_wear, max_oil_wear, min_intake_tem, average_intake_tem, 
+    max_intake_tem, min_air_flow, average_air_flow, max_air_flow, min_battery_voltage, 
+    average_battery_voltage, max_battery_voltage, min_coolant_tem, average_coolant_tem, 
+    max_coolant_tem
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.lgd.model.pojo.BaseInfoVehicleInnerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from base_info_vehicle_inner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.lgd.model.pojo.BaseInfoVehicleInnerExample" >
+    delete from base_info_vehicle_inner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insertSelective" parameterType="com.lgd.model.pojo.BaseInfoVehicleInner" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into base_info_vehicle_inner
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="innerId != null" >
+        inner_id,
+      </if>
+      <if test="minOilWear != null" >
+        min_oil_wear,
+      </if>
+      <if test="averageOilWear != null" >
+        average_oil_wear,
+      </if>
+      <if test="maxOilWear != null" >
+        max_oil_wear,
+      </if>
+      <if test="minIntakeTem != null" >
+        min_intake_tem,
+      </if>
+      <if test="averageIntakeTem != null" >
+        average_intake_tem,
+      </if>
+      <if test="maxIntakeTem != null" >
+        max_intake_tem,
+      </if>
+      <if test="minAirFlow != null" >
+        min_air_flow,
+      </if>
+      <if test="averageAirFlow != null" >
+        average_air_flow,
+      </if>
+      <if test="maxAirFlow != null" >
+        max_air_flow,
+      </if>
+      <if test="minBatteryVoltage != null" >
+        min_battery_voltage,
+      </if>
+      <if test="averageBatteryVoltage != null" >
+        average_battery_voltage,
+      </if>
+      <if test="maxBatteryVoltage != null" >
+        max_battery_voltage,
+      </if>
+      <if test="minCoolantTem != null" >
+        min_coolant_tem,
+      </if>
+      <if test="averageCoolantTem != null" >
+        average_coolant_tem,
+      </if>
+      <if test="maxCoolantTem != null" >
+        max_coolant_tem,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="innerId != null" >
+        #{innerId,jdbcType=VARCHAR},
+      </if>
+      <if test="minOilWear != null" >
+        #{minOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="averageOilWear != null" >
+        #{averageOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="maxOilWear != null" >
+        #{maxOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="minIntakeTem != null" >
+        #{minIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="averageIntakeTem != null" >
+        #{averageIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="maxIntakeTem != null" >
+        #{maxIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="minAirFlow != null" >
+        #{minAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="averageAirFlow != null" >
+        #{averageAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="maxAirFlow != null" >
+        #{maxAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="minBatteryVoltage != null" >
+        #{minBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="averageBatteryVoltage != null" >
+        #{averageBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="maxBatteryVoltage != null" >
+        #{maxBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="minCoolantTem != null" >
+        #{minCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="averageCoolantTem != null" >
+        #{averageCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="maxCoolantTem != null" >
+        #{maxCoolantTem,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.lgd.model.pojo.BaseInfoVehicleInnerExample" resultType="java.lang.Integer" >
+    select count(*) from base_info_vehicle_inner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update base_info_vehicle_inner
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.innerId != null" >
+        inner_id = #{record.innerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.minOilWear != null" >
+        min_oil_wear = #{record.minOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="record.averageOilWear != null" >
+        average_oil_wear = #{record.averageOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="record.maxOilWear != null" >
+        max_oil_wear = #{record.maxOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="record.minIntakeTem != null" >
+        min_intake_tem = #{record.minIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="record.averageIntakeTem != null" >
+        average_intake_tem = #{record.averageIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="record.maxIntakeTem != null" >
+        max_intake_tem = #{record.maxIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="record.minAirFlow != null" >
+        min_air_flow = #{record.minAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="record.averageAirFlow != null" >
+        average_air_flow = #{record.averageAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="record.maxAirFlow != null" >
+        max_air_flow = #{record.maxAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="record.minBatteryVoltage != null" >
+        min_battery_voltage = #{record.minBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="record.averageBatteryVoltage != null" >
+        average_battery_voltage = #{record.averageBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="record.maxBatteryVoltage != null" >
+        max_battery_voltage = #{record.maxBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="record.minCoolantTem != null" >
+        min_coolant_tem = #{record.minCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="record.averageCoolantTem != null" >
+        average_coolant_tem = #{record.averageCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="record.maxCoolantTem != null" >
+        max_coolant_tem = #{record.maxCoolantTem,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update base_info_vehicle_inner
+    set id = #{record.id,jdbcType=INTEGER},
+      inner_id = #{record.innerId,jdbcType=VARCHAR},
+      min_oil_wear = #{record.minOilWear,jdbcType=DOUBLE},
+      average_oil_wear = #{record.averageOilWear,jdbcType=DOUBLE},
+      max_oil_wear = #{record.maxOilWear,jdbcType=DOUBLE},
+      min_intake_tem = #{record.minIntakeTem,jdbcType=DOUBLE},
+      average_intake_tem = #{record.averageIntakeTem,jdbcType=DOUBLE},
+      max_intake_tem = #{record.maxIntakeTem,jdbcType=DOUBLE},
+      min_air_flow = #{record.minAirFlow,jdbcType=DOUBLE},
+      average_air_flow = #{record.averageAirFlow,jdbcType=DOUBLE},
+      max_air_flow = #{record.maxAirFlow,jdbcType=DOUBLE},
+      min_battery_voltage = #{record.minBatteryVoltage,jdbcType=DOUBLE},
+      average_battery_voltage = #{record.averageBatteryVoltage,jdbcType=DOUBLE},
+      max_battery_voltage = #{record.maxBatteryVoltage,jdbcType=DOUBLE},
+      min_coolant_tem = #{record.minCoolantTem,jdbcType=DOUBLE},
+      average_coolant_tem = #{record.averageCoolantTem,jdbcType=DOUBLE},
+      max_coolant_tem = #{record.maxCoolantTem,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lgd.model.pojo.BaseInfoVehicleInner" >
+    update base_info_vehicle_inner
+    <set >
+      <if test="innerId != null" >
+        inner_id = #{innerId,jdbcType=VARCHAR},
+      </if>
+      <if test="minOilWear != null" >
+        min_oil_wear = #{minOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="averageOilWear != null" >
+        average_oil_wear = #{averageOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="maxOilWear != null" >
+        max_oil_wear = #{maxOilWear,jdbcType=DOUBLE},
+      </if>
+      <if test="minIntakeTem != null" >
+        min_intake_tem = #{minIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="averageIntakeTem != null" >
+        average_intake_tem = #{averageIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="maxIntakeTem != null" >
+        max_intake_tem = #{maxIntakeTem,jdbcType=DOUBLE},
+      </if>
+      <if test="minAirFlow != null" >
+        min_air_flow = #{minAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="averageAirFlow != null" >
+        average_air_flow = #{averageAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="maxAirFlow != null" >
+        max_air_flow = #{maxAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="minBatteryVoltage != null" >
+        min_battery_voltage = #{minBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="averageBatteryVoltage != null" >
+        average_battery_voltage = #{averageBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="maxBatteryVoltage != null" >
+        max_battery_voltage = #{maxBatteryVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="minCoolantTem != null" >
+        min_coolant_tem = #{minCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="averageCoolantTem != null" >
+        average_coolant_tem = #{averageCoolantTem,jdbcType=DOUBLE},
+      </if>
+      <if test="maxCoolantTem != null" >
+        max_coolant_tem = #{maxCoolantTem,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

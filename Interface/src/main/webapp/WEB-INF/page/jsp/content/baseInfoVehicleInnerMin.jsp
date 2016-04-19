@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-
 <head>
     <title>基于车联网OBD行车数据报表系统的设计与实现</title>
 
@@ -68,9 +67,9 @@
 
 <!--sidebar-menu-->
 <div id="sidebar">
-    <a class="visible-phone">
+    <a href="#" class="visible-phone">
         <i class="icon icon-signal"></i>
-        引擎转速范围统计</a>
+        车辆参数极值统计</a>
     <ul>
         <li >
             <a href="${pageContext.request.contextPath}/login/main.do">
@@ -92,30 +91,30 @@
         </li>
 
 
-        <li>
-            <a href="${pageContext.request.contextPath}/catalog/vehicleRangePercentCount/index.do">
-                <i class="icon icon-th"></i>
-                <span>车辆参数范围占比统计</span>
-            </a>
+        <li><a href="${pageContext.request.contextPath}/catalog/percentageCount/index.do">
+            <i class="icon icon-th"></i>
+            <span>车辆参数范围占比统计</span></a>
         </li>
 
-        <li class="active">
-            <a href="${pageContext.request.contextPath}/catalog/recentEngineSpeedRange/index.do">
+        <li><a href="${pageContext.request.contextPath}/catalog/vehicleEngineLoadRange/index.do">
             <i class="icon icon-fullscreen"></i>
             <span>引擎转速范围统计</span></a>
         </li>
 
 
-        <li class="submenu">
-            <a href="#"><i class="icon icon-th-list"></i>
-                <span>Forms</span> <span class="label label-important">3</span>
-            </a>
+        <li class="submenu active">
+            <a >
+                <i class="icon icon-th-list"></i>
+                <span>汽车ID维度的参数统计</span>
+                <span class="label label-important">3</span></a>
+
             <ul>
-                <li><a href="form-common.html">Basic Form</a></li>
-                <li><a href="form-validation.html">Form with Validation</a></li>
-                <li><a href="form-wizard.html">Form with Wizard</a></li>
+                <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/max.do">最大值</a></li>
+                <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/average.do">均值</a></li>
+                <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/min.do">最小值</a></li>
             </ul>
         </li>
+
 
         <li><a href="buttons.html">
             <i class="icon icon-tint"></i>
@@ -140,7 +139,7 @@
             <a href="${pageContext.request.contextPath}/login/main.do"
                title="Go to Home" class="tip-bottom">
                 <i class="icon-home"></i> 主页 </a>
-            <a class="current">引擎转速范围统计</a>
+            <a class="current">基于汽车ID为维度的最小值统计</a>
         </div>
     </div>
 
@@ -151,17 +150,19 @@
             <div class="span12">
                 <div class="widget-box">
                     <div class="widget-title">
-                        <span class="icon">
-                          <i class="icon-signal"></i>
-                        </span>
-                        <h5>引擎转速范围统计</h5>
+            <span class="icon">
+              <i class="icon-signal"></i>
+            </span>
+                        <h5>最小值统计</h5>
                     </div>
 
                     <div class="widget-content">
+
+
                         <div id="container" style="height: 400px">
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -178,11 +179,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/matrix.js" > </script>
 
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts-more.js"></script>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/recent_engine_speed_range.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/base_info_vehicle_inner_min.js"></script>
 
 <script type="text/javascript">
 

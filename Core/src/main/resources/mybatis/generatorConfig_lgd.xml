@@ -100,7 +100,7 @@
                     <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>-->
 
-        <table tableName="vehicle_max_count" schema="reportdata">
+        <!--<table tableName="vehicle_max_count" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>
 
@@ -124,8 +124,15 @@
 
         <table tableName="recent_engine_speed_range" schema="reportdata">
             <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>-->
+
+        <table tableName="base_info_vehicle_inner" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
         </table>
 
+        <table tableName="base_info_vehicle_time" schema="reportdata">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
 
 
     </context>

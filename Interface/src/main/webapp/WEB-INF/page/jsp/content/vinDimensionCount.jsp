@@ -140,6 +140,9 @@
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.flot.resize.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.peity.min.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
+
+  <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/matrix.js" > </script>
+
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
 
   <script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/vin_dimension_count.js"></script>

@@ -98,43 +98,34 @@
       <span>引擎转速范围统计</span></a>
     </li>
 
-
-    <li> <a href="widgets.html">
-      <i class="icon icon-inbox"></i>
-      <span>Widgets</span></a>
-    </li>
-
-    <li><a href="tables.html">
-      <i class="icon icon-th"></i>
-      <span>Tables</span></a>
-    </li>
-    <li><a href="grid.html">
-      <i class="icon icon-fullscreen"></i>
-      <span>Full width</span></a>
-    </li>
-
+    <%--<li class="submenu active">--%>
     <li class="submenu">
-      <a href="#">
+      <a >
         <i class="icon icon-th-list"></i>
-        <span>Forms</span>
+        <span>汽车ID维度的参数统计</span>
         <span class="label label-important">3</span></a>
 
       <ul>
-        <li><a href="form-common.html">Basic Form</a></li>
-        <li><a href="form-validation.html">Form with Validation</a></li>
-        <li><a href="form-wizard.html">Form with Wizard</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/max.do">最大值</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/average.do">均值</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/min.do">最小值</a></li>
       </ul>
     </li>
 
-    <li><a href="buttons.html">
-      <i class="icon icon-tint"></i>
-      <span>Buttons &amp; icons</span></a>
+    <li class="submenu">
+      <a >
+        <i class="icon icon-file"></i>
+        <span>日期维度的参数范围统计</span>
+        <span class="label label-important">5</span></a>
+      <ul>
+        <li><a href="index2.html">油耗</a></li>
+        <li><a href="gallery.html">进气温度</a></li>
+        <li><a href="calendar.html">空气流量</a></li>
+        <li><a href="invoice.html">电瓶电压</a></li>
+        <li><a href="chat.html">冷却液水温</a></li>
+      </ul>
     </li>
 
-    <li><a href="interface.html">
-      <i class="icon icon-pencil"></i>
-      <span>Eelements</span></a>
-    </li>
 
   </ul>
 </div>
