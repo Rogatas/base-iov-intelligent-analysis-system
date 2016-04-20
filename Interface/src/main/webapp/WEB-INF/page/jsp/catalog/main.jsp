@@ -118,11 +118,11 @@
         <span>日期维度的参数范围统计</span>
         <span class="label label-important">5</span></a>
       <ul>
-        <li><a href="index2.html">油耗</a></li>
-        <li><a href="gallery.html">进气温度</a></li>
-        <li><a href="calendar.html">空气流量</a></li>
-        <li><a href="invoice.html">电瓶电压</a></li>
-        <li><a href="chat.html">冷却液水温</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/oilWear.do">油耗</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/intakeTem.do">进气温度</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/airFlow.do">空气流量</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/batteryVoltage.do">电瓶电压</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/coolantTem.do">冷却液水温</a></li>
       </ul>
     </li>
 

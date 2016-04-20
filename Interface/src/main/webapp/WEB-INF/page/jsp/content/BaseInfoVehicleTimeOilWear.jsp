@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html lang="zh-CN">
+
 <head>
     <title>基于车联网OBD行车数据报表系统的设计与实现</title>
 
@@ -67,9 +68,9 @@
 
 <!--sidebar-menu-->
 <div id="sidebar">
-    <a href="#" class="visible-phone">
+    <a class="visible-phone">
         <i class="icon icon-signal"></i>
-        车辆参数极值统计</a>
+        日期维度的范围统计</a>
     <ul>
         <li >
             <a href="${pageContext.request.contextPath}/login/main.do">
@@ -104,7 +105,7 @@
         </li>
 
         <%--<li class="submenu active">--%>
-        <li class="submenu active">
+        <li class="submenu">
             <a >
                 <i class="icon icon-th-list"></i>
                 <span>汽车ID维度的参数统计</span>
@@ -117,7 +118,7 @@
             </ul>
         </li>
 
-        <li class="submenu">
+        <li class="submenu active">
             <a >
                 <i class="icon icon-file"></i>
                 <span>日期维度的参数范围统计</span>
@@ -130,6 +131,7 @@
                 <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/coolantTem.do">冷却液水温</a></li>
             </ul>
         </li>
+
     </ul>
 </div>
 
@@ -141,7 +143,7 @@
             <a href="${pageContext.request.contextPath}/login/main.do"
                title="Go to Home" class="tip-bottom">
                 <i class="icon-home"></i> 主页 </a>
-            <a class="current">基于汽车ID为维度的最大值统计</a>
+            <a class="current">每日油耗统计</a>
         </div>
     </div>
 
@@ -152,19 +154,17 @@
             <div class="span12">
                 <div class="widget-box">
                     <div class="widget-title">
-            <span class="icon">
-              <i class="icon-signal"></i>
-            </span>
-                        <h5>最大值统计</h5>
+                        <span class="icon">
+                          <i class="icon-signal"></i>
+                        </span>
+                        <h5>每日油耗统计</h5>
                     </div>
 
                     <div class="widget-content">
-
-
                         <div id="container" style="height: 400px">
                         </div>
-
                     </div>
+
                 </div>
             </div>
         </div>
@@ -181,10 +181,11 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/matrix.js" > </script>
 
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/page/frame/js/highcharts-more.js"></script>
 
-
-<script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/base_info_vehicle_inner_max.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/page/dev/js/content/base_info_vehicle_time_oil_wear.js"></script>
 
 <script type="text/javascript">
 

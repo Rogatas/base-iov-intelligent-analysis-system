@@ -41,6 +41,8 @@
         <mapper resource="mybatis/sqlmap/recentEngineSpeedRangeMapper.xml" />
         <mapper resource="mybatis/sqlmap/baseInfoVehicleInnerMapper.xml" />
 
+        <mapper resource="mybatis/sqlmap/baseInfoVehicleTimeMapper.xml" />
+
     </mappers>
 
 

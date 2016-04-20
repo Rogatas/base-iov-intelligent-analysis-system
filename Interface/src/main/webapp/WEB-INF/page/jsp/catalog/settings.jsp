@@ -75,27 +75,67 @@
     <i class="icon icon-list"></i>
     settings</a>
   <ul>
-    <li>
+
+    <li >
       <a href="${pageContext.request.contextPath}/login/main.do">
         <i class="icon icon-home"></i>
         <span>主页</span></a>
     </li>
+
     <li>
       <a href="${pageContext.request.contextPath}/catalog/vinDimensionCount.do" >
         <i class="icon icon-signal"></i>
         <span>VIN码各维度统计</span>
       </a>
     </li>
-    <li><a href="widgets.html"><i class="icon icon-inbox"></i>
-      <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i>
-      <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i>
-      <span>Full width</span></a></li>
-    <li><a href="buttons.html"><i class="icon icon-tint"></i>
-      <span>Buttons &amp; icons</span></a></li>
-    <li><a href="interface.html"><i class="icon icon-pencil"></i>
-      <span>Eelements</span></a></li>
+
+    <li>
+      <a href="${pageContext.request.contextPath}/catalog/vehicleMaxCount/index.do">
+        <i class="icon icon-inbox">
+        </i>
+        <span>车辆参数极值统计</span></a>
+    </li>
+
+    <li>
+      <a href="${pageContext.request.contextPath}/catalog/vehicleRangePercentCount/index.do">
+        <i class="icon icon-th"></i>
+        <span>车辆参数范围占比统计</span>
+      </a>
+    </li>
+
+    <li><a href="${pageContext.request.contextPath}/catalog/recentEngineSpeedRange/index.do">
+      <i class="icon icon-fullscreen"></i>
+      <span>引擎转速范围统计</span></a>
+    </li>
+
+    <%--<li class="submenu active">--%>
+    <li class="submenu">
+      <a >
+        <i class="icon icon-th-list"></i>
+        <span>汽车ID维度的参数统计</span>
+        <span class="label label-important">3</span></a>
+
+      <ul>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/max.do">最大值</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/average.do">均值</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleInner/index/min.do">最小值</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a >
+        <i class="icon icon-file"></i>
+        <span>日期维度的参数范围统计</span>
+        <span class="label label-important">5</span></a>
+      <ul>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/oilWear.do">油耗</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/intakeTem.do">进气温度</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/airFlow.do">空气流量</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/batteryVoltage.do">电瓶电压</a></li>
+        <li><a href="${pageContext.request.contextPath}/catalog/baseInfoVehicleTime/index/coolantTem.do">冷却液水温</a></li>
+      </ul>
+    </li>
+
   </ul>
 </div>
 
