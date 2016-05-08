@@ -54,18 +54,18 @@
 
     <div class="form-actions">
         <span class="pull-left">
-            <a class="flip-link btn btn-info" id="to-recover">Lost password?</a>
+            <a class="flip-link btn btn-info" id="to-recover">忘记密码</a>
         </span>
 
 
 
         <span class="pull-right">
-            <a id="loginSubmit" type="submit" class="btn btn-success" /> Login
+            <a id="loginSubmit" type="submit" class="btn btn-success" /> 登录
           </a>
         </span>
 
         <span class="pull-right">
-            <a id="loginReset" type="button"  class="btn btn-danger" /> Reset
+            <a id="loginReset" type="button"  class="btn btn-danger" /> 清空
             </a>
         </span>
     </div>
@@ -74,8 +74,7 @@
   <%--找回密码--%>
   <form id="recoverform" action="${pageContext.request.contextPath}/login/losepassword.do"
         class="form-vertical" method="post">
-    <p class="normal_text">Enter your e-mail address below and
-      we will send you instructions how to recover a password.
+    <p class="normal_text">请输入你的邮箱，系统管理员将会向该邮箱发送你的密码。
     </p>
 
     <div class="controls">
@@ -92,16 +91,16 @@
     <div class="form-actions">
         <span class="pull-left">
             <a class="flip-link btn btn-success" id="to-login">
-          &laquo; Back to login</a>
+          &laquo; 返回登录界面</a>
         </span>
 
         <span class="pull-right">
             <a id="retrievePassword" type="submit"
-               class="btn btn-info"/>Recover</a>
+               class="btn btn-info"/>发送</a>
         </span>
         <span class="pull-right">
             <a id="retrieveReset" type="button"
-               class="btn btn-danger"/>Reset</a>
+               class="btn btn-danger"/>清空</a>
         </span>
     </div>
   </form>

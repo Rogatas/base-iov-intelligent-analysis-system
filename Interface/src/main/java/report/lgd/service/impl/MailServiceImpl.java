@@ -65,7 +65,7 @@ public class MailServiceImpl implements MailService{
 
         info.setToAddress(email);
 
-        info.setSubject("基于车联网OBD行车数据报表系统，密码已找回，请查收！");
+        info.setSubject("车联网智能分析系统，密码已找回，请查收！");
         info.setContent("你的用户名为："+user.getUsername()+",你的密码为："+decryptPassword+".");
 
         try {

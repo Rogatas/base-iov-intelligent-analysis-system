@@ -25,7 +25,6 @@ $(function ()
             alert("error");
         }
     });
-
     $(document).ready(function() {
         //每隔3秒自动调用方法，实现图表的实时更新
         //window.setInterval(getHighchats,3000);

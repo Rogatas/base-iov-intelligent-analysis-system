@@ -166,13 +166,13 @@
                   name="basic_validate"
                   id="basic_validate" novalidate="novalidate">
               <div class="control-group">
-                <label class="control-label">Your NickName</label>
+                <label class="control-label">你的昵称</label>
                 <div class="controls">
                   <input type="text" name="nickname" id="nickname" />
                 </div>
               </div>
               <div class="control-group">
-                <label class="control-label">Your Email</label>
+                <label class="control-label">你的邮箱</label>
                 <div class="controls">
                   <input type="text" name="email" id="email" />
                 </div>
@@ -184,9 +184,9 @@
 
               <div class="form-actions">
                 <input id="baseButton" type="submit"
-                       value="Validate" class="btn btn-success">
+                       value="确认" class="btn btn-success">
                 <input id="baseClear" type="button"
-                       value="Clear" class="btn btn-info">
+                       value="清空" class="btn btn-info">
               </div>
 
             </form>
@@ -212,14 +212,14 @@
                   id="password_validate" novalidate="novalidate">
 
               <div class="control-group">
-                <label class="control-label">Password</label>
+                <label class="control-label">密码</label>
                 <div class="controls">
                   <input type="password" name="passwd" id="passwd"/>
                 </div>
               </div>
 
               <div class="control-group">
-                <label class="control-label">Confirm password</label>
+                <label class="control-label">确认密码</label>
                 <div class="controls">
                   <input  type="password"
                          name="passwdConfirm" id="passwdConfirm" />
@@ -229,9 +229,9 @@
 				color:Tomato;font-size:16px;"> ${msgPasswd}</p>
               <div class="form-actions">
                 <input id="submitButton" type="submit"
-                       value="Validate" class="btn btn-success">
+                       value="确认" class="btn btn-success">
                 <input id="submitClear" type="button"
-                       value="Clear" class="btn btn-info">
+                       value="清空" class="btn btn-info">
               </div>
 
             </form>

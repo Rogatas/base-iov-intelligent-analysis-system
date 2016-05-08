@@ -84,7 +84,7 @@ public class LoginController {
             //username = user.getUsername();
             System.out.println("login success...");
 
-            return "redirect:main.do";
+            return "redirect:main.do"; //重定向
         }
         System.out.println("false");
         modelMap.addAttribute("msg", "账号不存在或者密码错误!");
@@ -98,7 +98,7 @@ public class LoginController {
 
         modelMap.addAttribute("username", UserUtils.getNikeOrUserName(session, "user"));
 
-        return PREFIX+"main";
+        return PREFIX+"main";//转发
     }
 
 
@@ -111,7 +111,7 @@ public class LoginController {
         if(loseEmail==null || loseEmail.trim().equals("")){
             modelMap.addAttribute("msg", "邮箱不能为空！");
 
-            return "forward:/login.jsp";
+            return "forward:/login.jsp"; //转发
         }
 
         if(mailService.isEmailExists(loseEmail)){
