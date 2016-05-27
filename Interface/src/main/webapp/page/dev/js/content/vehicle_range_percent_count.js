@@ -213,7 +213,7 @@ function getEngineTem(){
             }
         },
         title: {
-            text: '车辆引擎速度范围百分比统计'
+            text: '车辆引擎温度范围百分比统计'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
