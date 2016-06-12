@@ -59,9 +59,9 @@ public class MailServiceImpl implements MailService{
 
         MailBvo info = new MailBvo();
         info.setHost("smtp.163.com");
-        info.setFormName("liguodongiot@163.com");
-        info.setFormPassword("liguodong1994");
-        info.setReplayAddress("liguodongiot@163.com");
+        info.setFormName("xxxiot@163.com");
+        info.setFormPassword("xxxiot1994");
+        info.setReplayAddress("xxxiot@163.com");
 
         info.setToAddress(email);
 
