@@ -3,3 +3,5 @@
 *.class
 target
 out
+SettingsDao.java
+logs/
