@@ -1,10 +1,10 @@
 # ReportSystem
-基于车联网OBD行车数据报表系统的设计与实现  --20160315
+基于车联网OBD行车数据智能分析系统
 
-Core -- 基础模块
+report-forms-core -- 基础模块
 
-HadoopTask -- mapreduce任务
+report-forms-hadoop -- mapreduce任务(数据清洗)
 
-HiveTask -- hive任务
+report-forms-hive -- hive任务(数据统计)
 
-InterfaceTask -- 报表系统界面
+report-system-visualization -- 数据可视化
