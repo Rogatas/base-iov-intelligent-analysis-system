@@ -24,7 +24,7 @@
     </bean>
 
     <bean id="mapperScannerConfigurerMysql" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="report.lgd.mapper.mysql"/>
+        <property name="basePackage" value="report.lgd.mapper.mysql.operation"/>
         <!--<property name="sqlSessionFactory" ref="sqlSessionFactoryMysqlMybatis"/>-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryMysqlMybatis"/>
     </bean>

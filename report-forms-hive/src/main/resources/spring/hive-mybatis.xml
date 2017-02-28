@@ -7,7 +7,8 @@
    <!-- mybatis文件 -->
    <bean id="sqlSessionFactoryHiveMybatis" class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="dataSource" ref="hive-ds"/>
-      <property name="mapperLocations" value="classpath*:mybatis/mapper/**/*.xml"/>
+      <property name="configLocation" value="classpath:mybatis/config/hive-mybatis-config.xml"/>
+      <property name="mapperLocations" value="classpath*:mybatis/mapper/hive/**/*.xml"/>
       <property name="plugins">
          <list>
             <bean id="queryInterceptor" class="report.lgd.interceptor.LoggingSqlInterceptor"/>
@@ -16,7 +17,7 @@
    </bean>
 
    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="mapperScannerConfigurerHive">
-      <property name="basePackage" value="report.lgd.mapper.hive"/>
+      <property name="basePackage" value="report.lgd.mapper.hive.operation"/>
       <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryHiveMybatis"/>
    </bean>
 

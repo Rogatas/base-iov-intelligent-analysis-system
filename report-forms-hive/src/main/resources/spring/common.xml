@@ -13,6 +13,8 @@
     <!--注册aspectj-->
     <aop:aspectj-autoproxy/>
 
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
     <context:component-scan base-package="report.lgd.task,report.lgd.service,report.lgd.dao"/>
 
 
